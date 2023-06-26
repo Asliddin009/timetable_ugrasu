@@ -1,0 +1,1037 @@
+[
+  {
+    "abbr": "Веб (ЛР)",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 222,
+    "name": "Вебинар (лабораторные работы)",
+    "unit": ""
+  },
+  {
+    "abbr": "Веб (ЛК)",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 221,
+    "name": "Вебинар (лекция)",
+    "unit": ""
+  },
+  {
+    "abbr": null,
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 281,
+    "name": "Внеаудиторная ",
+    "unit": ""
+  },
+  {
+    "abbr": "ВКР",
+    "code": "19",
+    "complexity": 0,
+    "kindOfWorkGid": 29,
+    "kindOfWorkOid": 17,
+    "name": "Выполнение ВКР",
+    "unit": ""
+  },
+  {
+    "abbr": "ГАз",
+    "code": "30",
+    "complexity": 0,
+    "kindOfWorkGid": 54,
+    "kindOfWorkOid": 30,
+    "name": "Государственная аттестация (защита)",
+    "unit": ""
+  },
+  {
+    "abbr": "ГАэ",
+    "code": "18",
+    "complexity": 0,
+    "kindOfWorkGid": 28,
+    "kindOfWorkOid": 18,
+    "name": "Государстенная аттестация (экзамен)",
+    "unit": ""
+  },
+  {
+    "abbr": "Др",
+    "code": "20",
+    "complexity": 0,
+    "kindOfWorkGid": 30,
+    "kindOfWorkOid": 16,
+    "name": "Дипломная работа",
+    "unit": ""
+  },
+  {
+    "abbr": "Дп",
+    "code": "21",
+    "complexity": 0,
+    "kindOfWorkGid": 31,
+    "kindOfWorkOid": 15,
+    "name": "Дипломный проект",
+    "unit": ""
+  },
+  {
+    "abbr": "Дист.тест.",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 361,
+    "name": "Дистанционное тестирование",
+    "unit": ""
+  },
+  {
+    "abbr": "ДЛб",
+    "code": "002",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 263,
+    "name": "Дистанционные лабораторные работы",
+    "unit": ""
+  },
+  {
+    "abbr": "ДЛек",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 341,
+    "name": "Дистанционные лекции",
+    "unit": ""
+  },
+  {
+    "abbr": "ДЛек\/В",
+    "code": "82",
+    "complexity": 0,
+    "kindOfWorkGid": 175,
+    "kindOfWorkOid": 175,
+    "name": "Дистанционные лекции (Вебинар)",
+    "unit": ""
+  },
+  {
+    "abbr": "ДПр",
+    "code": "83",
+    "complexity": 0,
+    "kindOfWorkGid": 176,
+    "kindOfWorkOid": 174,
+    "name": "Дистанционные практические занятия",
+    "unit": ""
+  },
+  {
+    "abbr": "ДПр\/В",
+    "code": "83",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 261,
+    "name": "Дистанционные практические занятия (Вебинар)",
+    "unit": ""
+  },
+  {
+    "abbr": "Дз",
+    "code": "009",
+    "complexity": 0,
+    "kindOfWorkGid": 16,
+    "kindOfWorkOid": 7,
+    "name": "Дифференцированный зачет",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "45",
+    "complexity": 0,
+    "kindOfWorkGid": 105,
+    "kindOfWorkOid": 173,
+    "name": "Дифференцированный зачет (аспирантура)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "80",
+    "complexity": 0,
+    "kindOfWorkGid": 165,
+    "kindOfWorkOid": 178,
+    "name": "Дополнительное образование",
+    "unit": ""
+  },
+  {
+    "abbr": "ДВКР",
+    "code": "29",
+    "complexity": 0,
+    "kindOfWorkGid": 53,
+    "kindOfWorkOid": 31,
+    "name": "Допуск к ВКР",
+    "unit": ""
+  },
+  {
+    "abbr": "Зан",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 100,
+    "kindOfWorkOid": 441,
+    "name": "Занятие",
+    "unit": ""
+  },
+  {
+    "abbr": " Зач",
+    "code": "67",
+    "complexity": 0,
+    "kindOfWorkGid": 145,
+    "kindOfWorkOid": 188,
+    "name": "Зачет",
+    "unit": ""
+  },
+  {
+    "abbr": "ЗачТест",
+    "code": "005",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 122,
+    "name": "Зачёт в форме тестирования",
+    "unit": ""
+  },
+  {
+    "abbr": "ЗачОцТест",
+    "code": "005",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 402,
+    "name": "Зачёт в форме тестирования (дифференцированный)",
+    "unit": ""
+  },
+  {
+    "abbr": " ЗачОц",
+    "code": "66",
+    "complexity": 0,
+    "kindOfWorkGid": 144,
+    "kindOfWorkOid": 189,
+    "name": "Зачет с оценкой",
+    "unit": ""
+  },
+  {
+    "abbr": "Зачет",
+    "code": "63",
+    "complexity": 0,
+    "kindOfWorkGid": 141,
+    "kindOfWorkOid": 192,
+    "name": "Зачеты",
+    "unit": ""
+  },
+  {
+    "abbr": "Зачет",
+    "code": "005",
+    "complexity": 0,
+    "kindOfWorkGid": 5,
+    "kindOfWorkOid": 5,
+    "name": "Зачёты",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "39",
+    "complexity": 0,
+    "kindOfWorkGid": 75,
+    "kindOfWorkOid": 21,
+    "name": "Зачёты (аспиранта)",
+    "unit": ""
+  },
+  {
+    "abbr": " ЗачетОц",
+    "code": "65",
+    "complexity": 0,
+    "kindOfWorkGid": 143,
+    "kindOfWorkOid": 190,
+    "name": "Зачеты с оценкой",
+    "unit": ""
+  },
+  {
+    "abbr": "ИнтЭкз",
+    "code": "005",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 403,
+    "name": "Интернет-экзамен",
+    "unit": ""
+  },
+  {
+    "abbr": "Канд. экз.",
+    "code": "64",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 323,
+    "name": "Кандидатский экзамен",
+    "unit": ""
+  },
+  {
+    "abbr": "Конс",
+    "code": "81",
+    "complexity": 0,
+    "kindOfWorkGid": 170,
+    "kindOfWorkOid": 161,
+    "name": "Консультации",
+    "unit": ""
+  },
+  {
+    "abbr": "КсПр",
+    "code": "003",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 241,
+    "name": "Консультации к практическим (семинарские занятия)",
+    "unit": ""
+  },
+  {
+    "abbr": "Конс ПР",
+    "code": "81",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 224,
+    "name": "Консультации к практическим (семинарским) занятиям ",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "50",
+    "complexity": 0,
+    "kindOfWorkGid": 115,
+    "kindOfWorkOid": 200,
+    "name": "Консультации перед вступительными экзаменами по специальности",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "59",
+    "complexity": 0,
+    "kindOfWorkGid": 128,
+    "kindOfWorkOid": 194,
+    "name": "Консультации перед ГИА (ГЭ) на группу",
+    "unit": ""
+  },
+  {
+    "abbr": "Ксэ",
+    "code": "13",
+    "complexity": 0,
+    "kindOfWorkGid": 22,
+    "kindOfWorkOid": 9,
+    "name": "Консультации перед экзаменом",
+    "unit": ""
+  },
+  {
+    "abbr": "Конс ЛК",
+    "code": "81",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 223,
+    "name": "Консультации по материалам лекции",
+    "unit": ""
+  },
+  {
+    "abbr": "Конс МООК",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 421,
+    "name": "Консультации по МООК",
+    "unit": ""
+  },
+  {
+    "abbr": "Кст",
+    "code": "12",
+    "complexity": 0,
+    "kindOfWorkGid": 21,
+    "kindOfWorkOid": 35,
+    "name": "Консультации текущие",
+    "unit": ""
+  },
+  {
+    "abbr": null,
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 81,
+    "name": "Консультация ",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "52",
+    "complexity": 0,
+    "kindOfWorkGid": 121,
+    "kindOfWorkOid": 169,
+    "name": "Консультирование кандидатского экзамена по ИФН",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "51",
+    "complexity": 0,
+    "kindOfWorkGid": 120,
+    "kindOfWorkOid": 170,
+    "name": "Консультирование перед вступительным экзаменом по философии",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "56",
+    "complexity": 0,
+    "kindOfWorkGid": 125,
+    "kindOfWorkOid": 165,
+    "name": "Консультирование перед кандидатским экзаменом по иностранному языку",
+    "unit": ""
+  },
+  {
+    "abbr": "КСР",
+    "code": "16",
+    "complexity": 0,
+    "kindOfWorkGid": 25,
+    "kindOfWorkOid": 10,
+    "name": "Контроль самостоятельной работы",
+    "unit": ""
+  },
+  {
+    "abbr": "К",
+    "code": "17",
+    "complexity": 0,
+    "kindOfWorkGid": 26,
+    "kindOfWorkOid": 19,
+    "name": "Контрольные работы",
+    "unit": ""
+  },
+  {
+    "abbr": "Кр",
+    "code": "010",
+    "complexity": 0,
+    "kindOfWorkGid": 17,
+    "kindOfWorkOid": 36,
+    "name": "Курсовая работа",
+    "unit": ""
+  },
+  {
+    "abbr": "Кп",
+    "code": "011",
+    "complexity": 0,
+    "kindOfWorkGid": 18,
+    "kindOfWorkOid": 8,
+    "name": "Курсовой проект",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "69",
+    "complexity": 0,
+    "kindOfWorkGid": 147,
+    "kindOfWorkOid": 186,
+    "name": "Лабораторные занятия",
+    "unit": ""
+  },
+  {
+    "abbr": "Лб",
+    "code": "002",
+    "complexity": 0,
+    "kindOfWorkGid": 2,
+    "kindOfWorkOid": 3,
+    "name": "Лабораторные работы",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "71",
+    "complexity": 0,
+    "kindOfWorkGid": 149,
+    "kindOfWorkOid": 184,
+    "name": "Лекционные занятия",
+    "unit": ""
+  },
+  {
+    "abbr": "Лек",
+    "code": "01",
+    "complexity": 1,
+    "kindOfWorkGid": 1,
+    "kindOfWorkOid": 1,
+    "name": "Лекция",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "43",
+    "complexity": 0,
+    "kindOfWorkGid": 90,
+    "kindOfWorkOid": 201,
+    "name": "Научная школа",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "36",
+    "complexity": 0,
+    "kindOfWorkGid": 72,
+    "kindOfWorkOid": 24,
+    "name": "Научное руководство аспирантами",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "37",
+    "complexity": 0,
+    "kindOfWorkGid": 73,
+    "kindOfWorkOid": 23,
+    "name": "Научное руководство соискателями",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "74",
+    "complexity": 0,
+    "kindOfWorkGid": 152,
+    "kindOfWorkOid": 181,
+    "name": "Недели",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "76",
+    "complexity": 0,
+    "kindOfWorkGid": 154,
+    "kindOfWorkOid": 179,
+    "name": "Недели (П)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "75",
+    "complexity": 0,
+    "kindOfWorkGid": 153,
+    "kindOfWorkOid": 180,
+    "name": "Недели (У)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "33",
+    "complexity": 0,
+    "kindOfWorkGid": 61,
+    "kindOfWorkOid": 27,
+    "name": "Обзорные лекции",
+    "unit": ""
+  },
+  {
+    "abbr": "ОТП",
+    "code": "40",
+    "complexity": 0,
+    "kindOfWorkGid": 83,
+    "kindOfWorkOid": 20,
+    "name": "Отчет по практике",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "24",
+    "complexity": 0,
+    "kindOfWorkGid": 44,
+    "kindOfWorkOid": 13,
+    "name": "Перезачет",
+    "unit": ""
+  },
+  {
+    "abbr": "Пересдача ",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 80,
+    "kindOfWorkOid": 321,
+    "name": "Пересдача ",
+    "unit": ""
+  },
+  {
+    "abbr": "пДз",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 20,
+    "kindOfWorkOid": 382,
+    "name": "Пересдача дифференцированного зачета",
+    "unit": ""
+  },
+  {
+    "abbr": "пЗач",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 30,
+    "kindOfWorkOid": 383,
+    "name": "Пересдача зачёта",
+    "unit": ""
+  },
+  {
+    "abbr": "пКП",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 10,
+    "kindOfWorkOid": 381,
+    "name": "Пересдача курсового проекта",
+    "unit": ""
+  },
+  {
+    "abbr": "пКР",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 50,
+    "kindOfWorkOid": 385,
+    "name": "Пересдача курсовой работы",
+    "unit": ""
+  },
+  {
+    "abbr": "пПр",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 60,
+    "kindOfWorkOid": 386,
+    "name": "Пересдача отчета по практике",
+    "unit": ""
+  },
+  {
+    "abbr": "П\/сдач.ком",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 70,
+    "kindOfWorkOid": 322,
+    "name": "Пересдача с комиссией",
+    "unit": ""
+  },
+  {
+    "abbr": "пЭкз",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 40,
+    "kindOfWorkOid": 384,
+    "name": "Пересдача экзамена",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "42",
+    "complexity": 0,
+    "kindOfWorkGid": 89,
+    "kindOfWorkOid": 202,
+    "name": "Подготовка к государственному экзамену",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "49",
+    "complexity": 0,
+    "kindOfWorkGid": 112,
+    "kindOfWorkOid": 171,
+    "name": "Практика (аспиранта)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "31",
+    "complexity": 0,
+    "kindOfWorkGid": 55,
+    "kindOfWorkOid": 29,
+    "name": "Практика (М)",
+    "unit": ""
+  },
+  {
+    "abbr": "П",
+    "code": "006",
+    "complexity": 0,
+    "kindOfWorkGid": 6,
+    "kindOfWorkOid": 38,
+    "name": "Практики (ЗО)",
+    "unit": ""
+  },
+  {
+    "abbr": "П",
+    "code": "26",
+    "complexity": 0,
+    "kindOfWorkGid": 50,
+    "kindOfWorkOid": 11,
+    "name": "Практики (О)",
+    "unit": ""
+  },
+  {
+    "abbr": "Пр",
+    "code": "003",
+    "complexity": 0,
+    "kindOfWorkGid": 3,
+    "kindOfWorkOid": 4,
+    "name": "Практические (семинарские занятия)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "70",
+    "complexity": 0,
+    "kindOfWorkGid": 148,
+    "kindOfWorkOid": 185,
+    "name": "Практические занятия",
+    "unit": ""
+  },
+  {
+    "abbr": "ПредТест",
+    "code": "55",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 61,
+    "name": "Предварительное тестирование в компьютерном классе ",
+    "unit": ""
+  },
+  {
+    "abbr": "ПредЭкз",
+    "code": "55",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 121,
+    "name": "Предварительный экзамен",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "78",
+    "complexity": 0,
+    "kindOfWorkGid": 135,
+    "kindOfWorkOid": 198,
+    "name": "Представление научного доклада",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "47",
+    "complexity": 0,
+    "kindOfWorkGid": 110,
+    "kindOfWorkOid": 177,
+    "name": "Прием вступительного экзамена в аспирантуру",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "58",
+    "complexity": 0,
+    "kindOfWorkGid": 127,
+    "kindOfWorkOid": 195,
+    "name": "Прием государственного экзамена, защита ВКР (председатель)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "61",
+    "complexity": 0,
+    "kindOfWorkGid": 130,
+    "kindOfWorkOid": 199,
+    "name": "Прием государственного экзамена, защита ВКР (члены ГЭК)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "60",
+    "complexity": 0,
+    "kindOfWorkGid": 129,
+    "kindOfWorkOid": 163,
+    "name": "Прием кандидатского экзамена",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "55",
+    "complexity": 0,
+    "kindOfWorkGid": 124,
+    "kindOfWorkOid": 166,
+    "name": "Прием кандидатского экзамена по иностранному языку",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "54",
+    "complexity": 0,
+    "kindOfWorkGid": 123,
+    "kindOfWorkOid": 167,
+    "name": "Прием кандидатского экзамена по ИФН",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "25",
+    "complexity": 0,
+    "kindOfWorkGid": 45,
+    "kindOfWorkOid": 12,
+    "name": "Промежуточные аттестации",
+    "unit": ""
+  },
+  {
+    "abbr": "РГР",
+    "code": "15",
+    "complexity": 0,
+    "kindOfWorkGid": 24,
+    "kindOfWorkOid": 34,
+    "name": "Расчетно-графическая работа",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "79",
+    "complexity": 0,
+    "kindOfWorkGid": 160,
+    "kindOfWorkOid": 162,
+    "name": "Реферат",
+    "unit": ""
+  },
+  {
+    "abbr": "Ра",
+    "code": "34",
+    "complexity": 0,
+    "kindOfWorkGid": 66,
+    "kindOfWorkOid": 26,
+    "name": "Реферат аспиранта",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "73",
+    "complexity": 0,
+    "kindOfWorkGid": 151,
+    "kindOfWorkOid": 182,
+    "name": "Рецензирование",
+    "unit": ""
+  },
+  {
+    "abbr": "РВКР",
+    "code": "28",
+    "complexity": 0,
+    "kindOfWorkGid": 52,
+    "kindOfWorkOid": 32,
+    "name": "Рецензирование ВКР",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "46",
+    "complexity": 0,
+    "kindOfWorkGid": 106,
+    "kindOfWorkOid": 172,
+    "name": "Рецензирование вступительного реферата (аспирантура)",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "57",
+    "complexity": 0,
+    "kindOfWorkGid": 126,
+    "kindOfWorkOid": 164,
+    "name": "Рецензирование реферата по иностранному языку",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "53",
+    "complexity": 0,
+    "kindOfWorkGid": 122,
+    "kindOfWorkOid": 168,
+    "name": "Рецензирование реферата по ИФН",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "62",
+    "complexity": 0,
+    "kindOfWorkGid": 140,
+    "kindOfWorkOid": 193,
+    "name": "Руководство",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "44",
+    "complexity": 0,
+    "kindOfWorkGid": 100,
+    "kindOfWorkOid": 196,
+    "name": "Руководство аспирантурой",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "41",
+    "complexity": 0,
+    "kindOfWorkGid": 84,
+    "kindOfWorkOid": 203,
+    "name": "Руководство институтом",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "32",
+    "complexity": 0,
+    "kindOfWorkGid": 56,
+    "kindOfWorkOid": 28,
+    "name": "Руководство кафедрой",
+    "unit": ""
+  },
+  {
+    "abbr": "С",
+    "code": "008",
+    "complexity": 0,
+    "kindOfWorkGid": 11,
+    "kindOfWorkOid": 37,
+    "name": "Самостоятельная работа",
+    "unit": ""
+  },
+  {
+    "abbr": "СО",
+    "code": "008",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 461,
+    "name": "Сопровождение обучающихся",
+    "unit": ""
+  },
+  {
+    "abbr": "Тест",
+    "code": "003",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 262,
+    "name": "Тестирование",
+    "unit": ""
+  },
+  {
+    "abbr": "Тест",
+    "code": "41",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 41,
+    "name": "Тестирование ",
+    "unit": ""
+  },
+  {
+    "abbr": "У",
+    "code": "007",
+    "complexity": 0,
+    "kindOfWorkGid": 7,
+    "kindOfWorkOid": 6,
+    "name": "Учебные практики (ЗО)",
+    "unit": ""
+  },
+  {
+    "abbr": "У",
+    "code": "27",
+    "complexity": 0,
+    "kindOfWorkGid": 51,
+    "kindOfWorkOid": 33,
+    "name": "Учебные практики (О)",
+    "unit": ""
+  },
+  {
+    "abbr": "Чэ",
+    "code": "23",
+    "complexity": 0,
+    "kindOfWorkGid": 39,
+    "kindOfWorkOid": 14,
+    "name": "Часы к экзамену",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "77",
+    "complexity": 0,
+    "kindOfWorkGid": 155,
+    "kindOfWorkOid": 197,
+    "name": "Часы контроля",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "68",
+    "complexity": 0,
+    "kindOfWorkGid": 146,
+    "kindOfWorkOid": 187,
+    "name": "Часы на контроль",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "64",
+    "complexity": 0,
+    "kindOfWorkGid": 142,
+    "kindOfWorkOid": 191,
+    "name": "Экзамен",
+    "unit": ""
+  },
+  {
+    "abbr": "Экзамен-вебинар",
+    "code": "104",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 301,
+    "name": "Экзамен в форме вебинара",
+    "unit": ""
+  },
+  {
+    "abbr": "Экз-тест",
+    "code": "104",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 101,
+    "name": "Экзамен в форме тестирования ",
+    "unit": ""
+  },
+  {
+    "abbr": "Экзамен-БРС",
+    "code": "104",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 302,
+    "name": "Экзамен по результатам БРС",
+    "unit": ""
+  },
+  {
+    "abbr": "ЭкзТест",
+    "code": "004",
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 401,
+    "name": "Экзаменационное тестирование",
+    "unit": ""
+  },
+  {
+    "abbr": "Э",
+    "code": "004",
+    "complexity": 0,
+    "kindOfWorkGid": 4,
+    "kindOfWorkOid": 39,
+    "name": "Экзамены",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "38",
+    "complexity": 0,
+    "kindOfWorkGid": 74,
+    "kindOfWorkOid": 22,
+    "name": "Экзамены (аспиранта)",
+    "unit": ""
+  },
+  {
+    "abbr": "Экскурс",
+    "code": null,
+    "complexity": 0,
+    "kindOfWorkGid": 0,
+    "kindOfWorkOid": 141,
+    "name": "Экскурсия ",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "35",
+    "complexity": 0,
+    "kindOfWorkGid": 67,
+    "kindOfWorkOid": 25,
+    "name": "Экспертиза диссертации",
+    "unit": ""
+  },
+  {
+    "abbr": " ",
+    "code": "48",
+    "complexity": 0,
+    "kindOfWorkGid": 111,
+    "kindOfWorkOid": 176,
+    "name": "Экспертиза диссертационных исследований",
+    "unit": ""
+  }
+]

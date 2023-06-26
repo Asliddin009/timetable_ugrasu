@@ -1,0 +1,128 @@
+[
+  {
+    "abbr": "!Служебный",
+    "code": null,
+    "facultyGid": 0,
+    "facultyOid": 21,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "!Служебный"
+  },
+  {
+    "abbr": "ГИС",
+    "code": "49",
+    "facultyGid": 180872,
+    "facultyOid": 103,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "ГУМАНИТАРНЫЙ ИНСТИТУТ"
+  },
+  {
+    "abbr": "ИндИ (филиал) ФГБОУ ",
+    "code": "60",
+    "facultyGid": 179417,
+    "facultyOid": 163,
+    "facultyUID": null,
+    "institute": "Филиалы ЮГУ",
+    "name": "ИНДУСТРИАЛЬНЫЙ ИНСТИТУТ (филиал) ФГБОУ ВО ЮГУ г.Нефтеюганск"
+  },
+  {
+    "abbr": "ИАД",
+    "code": "44",
+    "facultyGid": 179190,
+    "facultyOid": 122,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "ИНСТИТУТ АКАДЕМИЧЕСКОГО ДИЗАЙНА"
+  },
+  {
+    "abbr": "ИНиГ",
+    "code": "91",
+    "facultyGid": 175387,
+    "facultyOid": 102,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "ИНСТИТУТ НЕФТИ И ГАЗА"
+  },
+  {
+    "abbr": "ИНТех (филиал) ФГБОУ",
+    "code": "69",
+    "facultyGid": 179419,
+    "facultyOid": 161,
+    "facultyUID": null,
+    "institute": "Филиалы ЮГУ",
+    "name": "ИНСТИТУТ НЕФТИ И ТЕХНОЛОГИЙ (филиал) ФГБОУ ВО ЮГУ г.Сургут"
+  },
+  {
+    "abbr": "ИЦЭ",
+    "code": "42",
+    "facultyGid": 175388,
+    "facultyOid": 101,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "ИНСТИТУТ ЦИФРОВОЙ ЭКОНОМИКИ"
+  },
+  {
+    "abbr": "ЛНТфЮГУ",
+    "code": "66",
+    "facultyGid": 7049,
+    "facultyOid": 164,
+    "facultyUID": null,
+    "institute": "Филиалы ЮГУ",
+    "name": "ЛЯНТОРСКИЙ НЕФТЯНОЙ ТЕХНИКУМ (филиал) ФГБОУ ВО ЮГУ г.Лянтор"
+  },
+  {
+    "abbr": "НефтИн (Филиал) ФГБО",
+    "code": "67",
+    "facultyGid": 179418,
+    "facultyOid": 162,
+    "facultyUID": null,
+    "institute": "Филиалы ЮГУ",
+    "name": "НЕФТЯНОЙ ИНСТИТУТ (филиал) ФГБОУ ВО ЮГУ г.Нижневартовск"
+  },
+  {
+    "abbr": "Филиалы ЮГУ",
+    "code": "2",
+    "facultyGid": 0,
+    "facultyOid": 142,
+    "facultyUID": null,
+    "institute": "",
+    "name": "Филиалы ЮГУ"
+  },
+  {
+    "abbr": "ЦП UGS",
+    "code": "94",
+    "facultyGid": 180871,
+    "facultyOid": 121,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "ЦЕНТР ПРЕВОСХОДСТВА UGRA GREEN SCHOOL"
+  },
+  {
+    "abbr": "ЭД ФКиС",
+    "code": "9999",
+    "facultyGid": 1,
+    "facultyOid": 181,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "Элективные дисциплины по физической культуре и спорту"
+  },
+  {
+    "abbr": "ЮГУ",
+    "code": "1",
+    "facultyGid": 0,
+    "facultyOid": 141,
+    "facultyUID": null,
+    "institute": "",
+    "name": "Югорский государственный университет"
+  },
+  {
+    "abbr": "ИЮП",
+    "code": "48",
+    "facultyGid": 166402,
+    "facultyOid": 9,
+    "facultyUID": null,
+    "institute": "Югорский государственный университет",
+    "name": "ЮРИДИЧЕСКИЙ ИНСТИТУТ"
+  }
+]

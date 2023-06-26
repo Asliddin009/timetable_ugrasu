@@ -1,0 +1,380 @@
+[
+  {
+    "contenttableoflessonoid": 171,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 1,
+    "tableoflesson": 65,
+    "timebeg": "08:15",
+    "timeend": "09:50"
+  },
+  {
+    "contenttableoflessonoid": 1,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 1,
+    "tableoflesson": 1,
+    "timebeg": "08:30",
+    "timeend": "10:05"
+  },
+  {
+    "contenttableoflessonoid": 70,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 1,
+    "tableoflesson": 63,
+    "timebeg": "08:15",
+    "timeend": "09:50"
+  },
+  {
+    "contenttableoflessonoid": 78,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 1,
+    "tableoflesson": 64,
+    "timebeg": "08:15",
+    "timeend": "09:50"
+  },
+  {
+    "contenttableoflessonoid": 30,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 1,
+    "tableoflesson": 23,
+    "timebeg": "08:15",
+    "timeend": "09:35"
+  },
+  {
+    "contenttableoflessonoid": 50,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 1,
+    "tableoflesson": 43,
+    "timebeg": "08:15",
+    "timeend": "09:50"
+  },
+  {
+    "contenttableoflessonoid": 2,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 2,
+    "tableoflesson": 1,
+    "timebeg": "10:15",
+    "timeend": "11:50"
+  },
+  {
+    "contenttableoflessonoid": 71,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 2,
+    "tableoflesson": 63,
+    "timebeg": "10:00",
+    "timeend": "11:35"
+  },
+  {
+    "contenttableoflessonoid": 84,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 2,
+    "tableoflesson": 64,
+    "timebeg": "10:00",
+    "timeend": "11:35"
+  },
+  {
+    "contenttableoflessonoid": 31,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 2,
+    "tableoflesson": 23,
+    "timebeg": "09:45",
+    "timeend": "11:05"
+  },
+  {
+    "contenttableoflessonoid": 51,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 2,
+    "tableoflesson": 43,
+    "timebeg": "10:00",
+    "timeend": "11:35"
+  },
+  {
+    "contenttableoflessonoid": 116,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 2,
+    "tableoflesson": 65,
+    "timebeg": "10:00",
+    "timeend": "11:35"
+  },
+  {
+    "contenttableoflessonoid": 3,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 3,
+    "tableoflesson": 1,
+    "timebeg": "12:30",
+    "timeend": "14:05"
+  },
+  {
+    "contenttableoflessonoid": 72,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 3,
+    "tableoflesson": 63,
+    "timebeg": "12:10",
+    "timeend": "13:45"
+  },
+  {
+    "contenttableoflessonoid": 90,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 3,
+    "tableoflesson": 64,
+    "timebeg": "12:10",
+    "timeend": "13:45"
+  },
+  {
+    "contenttableoflessonoid": 32,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 3,
+    "tableoflesson": 23,
+    "timebeg": "11:35",
+    "timeend": "12:55"
+  },
+  {
+    "contenttableoflessonoid": 52,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 3,
+    "tableoflesson": 43,
+    "timebeg": "12:10",
+    "timeend": "13:45"
+  },
+  {
+    "contenttableoflessonoid": 122,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 3,
+    "tableoflesson": 65,
+    "timebeg": "12:10",
+    "timeend": "13:45"
+  },
+  {
+    "contenttableoflessonoid": 4,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 4,
+    "tableoflesson": 1,
+    "timebeg": "14:35",
+    "timeend": "16:10"
+  },
+  {
+    "contenttableoflessonoid": 73,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 4,
+    "tableoflesson": 63,
+    "timebeg": "14:15",
+    "timeend": "15:50"
+  },
+  {
+    "contenttableoflessonoid": 96,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 4,
+    "tableoflesson": 64,
+    "timebeg": "14:15",
+    "timeend": "15:50"
+  },
+  {
+    "contenttableoflessonoid": 33,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 4,
+    "tableoflesson": 23,
+    "timebeg": "13:05",
+    "timeend": "14:25"
+  },
+  {
+    "contenttableoflessonoid": 53,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 4,
+    "tableoflesson": 43,
+    "timebeg": "14:15",
+    "timeend": "15:50"
+  },
+  {
+    "contenttableoflessonoid": 128,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 4,
+    "tableoflesson": 65,
+    "timebeg": "14:15",
+    "timeend": "15:50"
+  },
+  {
+    "contenttableoflessonoid": 5,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 5,
+    "tableoflesson": 1,
+    "timebeg": "16:20",
+    "timeend": "17:55"
+  },
+  {
+    "contenttableoflessonoid": 74,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 5,
+    "tableoflesson": 63,
+    "timebeg": "16:00",
+    "timeend": "17:35"
+  },
+  {
+    "contenttableoflessonoid": 102,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 5,
+    "tableoflesson": 64,
+    "timebeg": "16:00",
+    "timeend": "17:35"
+  },
+  {
+    "contenttableoflessonoid": 34,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 5,
+    "tableoflesson": 23,
+    "timebeg": "14:55",
+    "timeend": "16:15"
+  },
+  {
+    "contenttableoflessonoid": 54,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 5,
+    "tableoflesson": 43,
+    "timebeg": "16:00",
+    "timeend": "17:35"
+  },
+  {
+    "contenttableoflessonoid": 134,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 5,
+    "tableoflesson": 65,
+    "timebeg": "16:00",
+    "timeend": "17:35"
+  },
+  {
+    "contenttableoflessonoid": 6,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 6,
+    "tableoflesson": 1,
+    "timebeg": "18:05",
+    "timeend": "19:40"
+  },
+  {
+    "contenttableoflessonoid": 75,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 6,
+    "tableoflesson": 63,
+    "timebeg": "17:45",
+    "timeend": "19:20"
+  },
+  {
+    "contenttableoflessonoid": 108,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 6,
+    "tableoflesson": 64,
+    "timebeg": "17:45",
+    "timeend": "19:20"
+  },
+  {
+    "contenttableoflessonoid": 35,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 6,
+    "tableoflesson": 23,
+    "timebeg": "16:25",
+    "timeend": "17:45"
+  },
+  {
+    "contenttableoflessonoid": 55,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 6,
+    "tableoflesson": 43,
+    "timebeg": "17:45",
+    "timeend": "19:20"
+  },
+  {
+    "contenttableoflessonoid": 140,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 6,
+    "tableoflesson": 65,
+    "timebeg": "17:45",
+    "timeend": "19:20"
+  },
+  {
+    "contenttableoflessonoid": 76,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 7,
+    "tableoflesson": 63,
+    "timebeg": "19:30",
+    "timeend": "21:05"
+  },
+  {
+    "contenttableoflessonoid": 114,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 7,
+    "tableoflesson": 64,
+    "timebeg": "19:30",
+    "timeend": "21:05"
+  },
+  {
+    "contenttableoflessonoid": 36,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 7,
+    "tableoflesson": 23,
+    "timebeg": "18:15",
+    "timeend": "19:35"
+  },
+  {
+    "contenttableoflessonoid": 56,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 7,
+    "tableoflesson": 43,
+    "timebeg": "19:30",
+    "timeend": "21:05"
+  },
+  {
+    "contenttableoflessonoid": 146,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 7,
+    "tableoflesson": 65,
+    "timebeg": "19:30",
+    "timeend": "21:05"
+  },
+  {
+    "contenttableoflessonoid": 37,
+    "duration": 2,
+    "extdayofweek": 0,
+    "number": 8,
+    "tableoflesson": 23,
+    "timebeg": "19:45",
+    "timeend": "21:05"
+  }
+]
