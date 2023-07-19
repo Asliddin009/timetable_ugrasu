@@ -1,0 +1,32 @@
+import 'package:injectable/injectable.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/entity/type_table.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/timetable_repo.dart';
+
+
+@Injectable(as: TimetableRepo)
+class NetTimetableRepo extends TimetableRepo{
+  @override
+  Future getAuditoriums() {
+    // TODO: implement getAuditoriums
+    throw UnimplementedError();
+  }
+
+  @override
+  Future getGroups() {
+    // TODO: implement getGroups
+    throw UnimplementedError();
+  }
+
+  @override
+  Future getLectures() {
+    // TODO: implement getLectures
+    throw UnimplementedError();
+  }
+
+  @override
+  Future getLessons({required String fromdate, required String todate, required String id, required TypeTable typeTable}) {
+    // TODO: implement getLessons
+    throw UnimplementedError();
+  }
+
+}

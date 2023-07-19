@@ -16,6 +16,9 @@ dependencies:
   flutter_bloc: ^8.1.3
   path_provider: ^2.0.15
   injectable_generator: ^1.5.4
+  freezed: ^2.4.1
+  freezed_annotation: ^2.4.1
+  json_serializable: ^6.5.1
   flutter:
     sdk: flutter
 
