@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../auth_repository.dart';
 import '../entities/user_entity/user_entity.dart';
 
 part 'auth_state.dart';
@@ -17,6 +15,10 @@ part 'auth_cubit.g.dart';
 class AuthCubit extends HydratedCubit<AuthState> {
   AuthCubit() : super(AuthState.notAuthorized());
 
+
+  void finishWelcomeScreen(){
+    emit(AuthState.authorized(const UserEntity(rootInTimetable: true)));
+  }
 
 
 

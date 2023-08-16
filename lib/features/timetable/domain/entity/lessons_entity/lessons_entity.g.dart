@@ -39,6 +39,7 @@ _$_LessonEntity _$$_LessonEntityFromJson(Map<String, dynamic> json) =>
       kindOfWork: json['kindOfWork'] as String,
       lecturer_rank: json['lecturer_rank'] as String?,
       lecturer_title: json['lecturer_title'] as String?,
+      isFilter: json['isFilter'] as bool?,
     );
 
 Map<String, dynamic> _$$_LessonEntityToJson(_$_LessonEntity instance) =>
@@ -57,4 +58,5 @@ Map<String, dynamic> _$$_LessonEntityToJson(_$_LessonEntity instance) =>
       'kindOfWork': instance.kindOfWork,
       'lecturer_rank': instance.lecturer_rank,
       'lecturer_title': instance.lecturer_title,
+      'isFilter': instance.isFilter,
     };

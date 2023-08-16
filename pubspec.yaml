@@ -19,6 +19,8 @@ dependencies:
   freezed: ^2.4.1
   freezed_annotation: ^2.4.1
   json_serializable: ^6.5.1
+  google_fonts: ^5.1.0
+  smooth_page_indicator: ^1.1.0
   flutter:
     sdk: flutter
 
@@ -53,12 +55,10 @@ flutter_launcher_icons:
     image_path: "path/to/image.png"
 
 flutter:
-
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+    - assets/images/welcome_icon.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

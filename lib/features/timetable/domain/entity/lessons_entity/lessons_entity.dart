@@ -38,8 +38,9 @@ class LessonEntity with _$LessonEntity {
         String? lecturerEmail,
         required String kindOfWork,
         String? lecturer_rank,
-        String? lecturer_title
-
+        String? lecturer_title,
+            //Фильтр
+            bool? isFilter
       }) = _LessonEntity;
 
 }

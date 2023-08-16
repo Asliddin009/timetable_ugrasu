@@ -214,7 +214,8 @@ mixin _$LessonEntity {
   String? get lecturerEmail => throw _privateConstructorUsedError;
   String get kindOfWork => throw _privateConstructorUsedError;
   String? get lecturer_rank => throw _privateConstructorUsedError;
-  String? get lecturer_title => throw _privateConstructorUsedError;
+  String? get lecturer_title => throw _privateConstructorUsedError; //Фильтр
+  bool? get isFilter => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -242,7 +243,8 @@ abstract class $LessonEntityCopyWith<$Res> {
       String? lecturerEmail,
       String kindOfWork,
       String? lecturer_rank,
-      String? lecturer_title});
+      String? lecturer_title,
+      bool? isFilter});
 }
 
 /// @nodoc
@@ -272,6 +274,7 @@ class _$LessonEntityCopyWithImpl<$Res, $Val extends LessonEntity>
     Object? kindOfWork = null,
     Object? lecturer_rank = freezed,
     Object? lecturer_title = freezed,
+    Object? isFilter = freezed,
   }) {
     return _then(_value.copyWith(
       auditorium: null == auditorium
@@ -330,6 +333,10 @@ class _$LessonEntityCopyWithImpl<$Res, $Val extends LessonEntity>
           ? _value.lecturer_title
           : lecturer_title // ignore: cast_nullable_to_non_nullable
               as String?,
+      isFilter: freezed == isFilter
+          ? _value.isFilter
+          : isFilter // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -356,7 +363,8 @@ abstract class _$$_LessonEntityCopyWith<$Res>
       String? lecturerEmail,
       String kindOfWork,
       String? lecturer_rank,
-      String? lecturer_title});
+      String? lecturer_title,
+      bool? isFilter});
 }
 
 /// @nodoc
@@ -384,6 +392,7 @@ class __$$_LessonEntityCopyWithImpl<$Res>
     Object? kindOfWork = null,
     Object? lecturer_rank = freezed,
     Object? lecturer_title = freezed,
+    Object? isFilter = freezed,
   }) {
     return _then(_$_LessonEntity(
       auditorium: null == auditorium
@@ -442,6 +451,10 @@ class __$$_LessonEntityCopyWithImpl<$Res>
           ? _value.lecturer_title
           : lecturer_title // ignore: cast_nullable_to_non_nullable
               as String?,
+      isFilter: freezed == isFilter
+          ? _value.isFilter
+          : isFilter // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -463,7 +476,8 @@ class _$_LessonEntity implements _LessonEntity {
       this.lecturerEmail,
       required this.kindOfWork,
       this.lecturer_rank,
-      this.lecturer_title});
+      this.lecturer_title,
+      this.isFilter});
 
   factory _$_LessonEntity.fromJson(Map<String, dynamic> json) =>
       _$$_LessonEntityFromJson(json);
@@ -496,10 +510,13 @@ class _$_LessonEntity implements _LessonEntity {
   final String? lecturer_rank;
   @override
   final String? lecturer_title;
+//Фильтр
+  @override
+  final bool? isFilter;
 
   @override
   String toString() {
-    return 'LessonEntity(auditorium: $auditorium, beginLesson: $beginLesson, building: $building, date: $date, dayOfWeek: $dayOfWeek, dayOfWeekString: $dayOfWeekString, discipline: $discipline, endLesson: $endLesson, group: $group, lecturer: $lecturer, lecturerEmail: $lecturerEmail, kindOfWork: $kindOfWork, lecturer_rank: $lecturer_rank, lecturer_title: $lecturer_title)';
+    return 'LessonEntity(auditorium: $auditorium, beginLesson: $beginLesson, building: $building, date: $date, dayOfWeek: $dayOfWeek, dayOfWeekString: $dayOfWeekString, discipline: $discipline, endLesson: $endLesson, group: $group, lecturer: $lecturer, lecturerEmail: $lecturerEmail, kindOfWork: $kindOfWork, lecturer_rank: $lecturer_rank, lecturer_title: $lecturer_title, isFilter: $isFilter)';
   }
 
   @override
@@ -532,7 +549,9 @@ class _$_LessonEntity implements _LessonEntity {
             (identical(other.lecturer_rank, lecturer_rank) ||
                 other.lecturer_rank == lecturer_rank) &&
             (identical(other.lecturer_title, lecturer_title) ||
-                other.lecturer_title == lecturer_title));
+                other.lecturer_title == lecturer_title) &&
+            (identical(other.isFilter, isFilter) ||
+                other.isFilter == isFilter));
   }
 
   @JsonKey(ignore: true)
@@ -552,7 +571,8 @@ class _$_LessonEntity implements _LessonEntity {
       lecturerEmail,
       kindOfWork,
       lecturer_rank,
-      lecturer_title);
+      lecturer_title,
+      isFilter);
 
   @JsonKey(ignore: true)
   @override
@@ -583,7 +603,8 @@ abstract class _LessonEntity implements LessonEntity {
       final String? lecturerEmail,
       required final String kindOfWork,
       final String? lecturer_rank,
-      final String? lecturer_title}) = _$_LessonEntity;
+      final String? lecturer_title,
+      final bool? isFilter}) = _$_LessonEntity;
 
   factory _LessonEntity.fromJson(Map<String, dynamic> json) =
       _$_LessonEntity.fromJson;
@@ -616,6 +637,8 @@ abstract class _LessonEntity implements LessonEntity {
   String? get lecturer_rank;
   @override
   String? get lecturer_title;
+  @override //Фильтр
+  bool? get isFilter;
   @override
   @JsonKey(ignore: true)
   _$$_LessonEntityCopyWith<_$_LessonEntity> get copyWith =>

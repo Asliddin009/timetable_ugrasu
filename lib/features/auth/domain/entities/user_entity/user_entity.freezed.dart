@@ -20,11 +20,16 @@ UserEntity _$UserEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserEntity {
-  String get email => throw _privateConstructorUsedError;
-  String get username => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  String? get accessToken => throw _privateConstructorUsedError;
-  String? get refreshToken => throw _privateConstructorUsedError;
+  GroupEntity? get groupEntityl =>
+      throw _privateConstructorUsedError; //флаг чтобы перебрасывать сразу на экран с расписанием
+  @JsonKey(defaultValue: true)
+  bool? get rootInTimetable =>
+      throw _privateConstructorUsedError; //флаг для темы
+  @JsonKey(defaultValue: true)
+  bool? get theme =>
+      throw _privateConstructorUsedError; //флаг для языка(по умолчанию русский)
+  @JsonKey(defaultValue: true)
+  bool? get isRusLanguage => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   AsyncSnapshot<dynamic>? get userState => throw _privateConstructorUsedError;
 
@@ -41,12 +46,13 @@ abstract class $UserEntityCopyWith<$Res> {
       _$UserEntityCopyWithImpl<$Res, UserEntity>;
   @useResult
   $Res call(
-      {String email,
-      String username,
-      String id,
-      String? accessToken,
-      String? refreshToken,
+      {GroupEntity? groupEntityl,
+      @JsonKey(defaultValue: true) bool? rootInTimetable,
+      @JsonKey(defaultValue: true) bool? theme,
+      @JsonKey(defaultValue: true) bool? isRusLanguage,
       @JsonKey(ignore: true) AsyncSnapshot<dynamic>? userState});
+
+  $GroupEntityCopyWith<$Res>? get groupEntityl;
 }
 
 /// @nodoc
@@ -62,39 +68,46 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = null,
-    Object? username = null,
-    Object? id = null,
-    Object? accessToken = freezed,
-    Object? refreshToken = freezed,
+    Object? groupEntityl = freezed,
+    Object? rootInTimetable = freezed,
+    Object? theme = freezed,
+    Object? isRusLanguage = freezed,
     Object? userState = freezed,
   }) {
     return _then(_value.copyWith(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      accessToken: freezed == accessToken
-          ? _value.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      refreshToken: freezed == refreshToken
-          ? _value.refreshToken
-          : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String?,
+      groupEntityl: freezed == groupEntityl
+          ? _value.groupEntityl
+          : groupEntityl // ignore: cast_nullable_to_non_nullable
+              as GroupEntity?,
+      rootInTimetable: freezed == rootInTimetable
+          ? _value.rootInTimetable
+          : rootInTimetable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isRusLanguage: freezed == isRusLanguage
+          ? _value.isRusLanguage
+          : isRusLanguage // ignore: cast_nullable_to_non_nullable
+              as bool?,
       userState: freezed == userState
           ? _value.userState
           : userState // ignore: cast_nullable_to_non_nullable
               as AsyncSnapshot<dynamic>?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GroupEntityCopyWith<$Res>? get groupEntityl {
+    if (_value.groupEntityl == null) {
+      return null;
+    }
+
+    return $GroupEntityCopyWith<$Res>(_value.groupEntityl!, (value) {
+      return _then(_value.copyWith(groupEntityl: value) as $Val);
+    });
   }
 }
 
@@ -107,12 +120,14 @@ abstract class _$$_UserEntityCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String email,
-      String username,
-      String id,
-      String? accessToken,
-      String? refreshToken,
+      {GroupEntity? groupEntityl,
+      @JsonKey(defaultValue: true) bool? rootInTimetable,
+      @JsonKey(defaultValue: true) bool? theme,
+      @JsonKey(defaultValue: true) bool? isRusLanguage,
       @JsonKey(ignore: true) AsyncSnapshot<dynamic>? userState});
+
+  @override
+  $GroupEntityCopyWith<$Res>? get groupEntityl;
 }
 
 /// @nodoc
@@ -126,34 +141,29 @@ class __$$_UserEntityCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = null,
-    Object? username = null,
-    Object? id = null,
-    Object? accessToken = freezed,
-    Object? refreshToken = freezed,
+    Object? groupEntityl = freezed,
+    Object? rootInTimetable = freezed,
+    Object? theme = freezed,
+    Object? isRusLanguage = freezed,
     Object? userState = freezed,
   }) {
     return _then(_$_UserEntity(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      accessToken: freezed == accessToken
-          ? _value.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      refreshToken: freezed == refreshToken
-          ? _value.refreshToken
-          : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String?,
+      groupEntityl: freezed == groupEntityl
+          ? _value.groupEntityl
+          : groupEntityl // ignore: cast_nullable_to_non_nullable
+              as GroupEntity?,
+      rootInTimetable: freezed == rootInTimetable
+          ? _value.rootInTimetable
+          : rootInTimetable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isRusLanguage: freezed == isRusLanguage
+          ? _value.isRusLanguage
+          : isRusLanguage // ignore: cast_nullable_to_non_nullable
+              as bool?,
       userState: freezed == userState
           ? _value.userState
           : userState // ignore: cast_nullable_to_non_nullable
@@ -166,33 +176,36 @@ class __$$_UserEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserEntity implements _UserEntity {
   const _$_UserEntity(
-      {required this.email,
-      required this.username,
-      required this.id,
-      this.accessToken,
-      this.refreshToken,
+      {this.groupEntityl,
+      @JsonKey(defaultValue: true) this.rootInTimetable,
+      @JsonKey(defaultValue: true) this.theme,
+      @JsonKey(defaultValue: true) this.isRusLanguage,
       @JsonKey(ignore: true) this.userState});
 
   factory _$_UserEntity.fromJson(Map<String, dynamic> json) =>
       _$$_UserEntityFromJson(json);
 
   @override
-  final String email;
+  final GroupEntity? groupEntityl;
+//флаг чтобы перебрасывать сразу на экран с расписанием
   @override
-  final String username;
+  @JsonKey(defaultValue: true)
+  final bool? rootInTimetable;
+//флаг для темы
   @override
-  final String id;
+  @JsonKey(defaultValue: true)
+  final bool? theme;
+//флаг для языка(по умолчанию русский)
   @override
-  final String? accessToken;
-  @override
-  final String? refreshToken;
+  @JsonKey(defaultValue: true)
+  final bool? isRusLanguage;
   @override
   @JsonKey(ignore: true)
   final AsyncSnapshot<dynamic>? userState;
 
   @override
   String toString() {
-    return 'UserEntity(email: $email, username: $username, id: $id, accessToken: $accessToken, refreshToken: $refreshToken, userState: $userState)';
+    return 'UserEntity(groupEntityl: $groupEntityl, rootInTimetable: $rootInTimetable, theme: $theme, isRusLanguage: $isRusLanguage, userState: $userState)';
   }
 
   @override
@@ -200,22 +213,21 @@ class _$_UserEntity implements _UserEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserEntity &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.accessToken, accessToken) ||
-                other.accessToken == accessToken) &&
-            (identical(other.refreshToken, refreshToken) ||
-                other.refreshToken == refreshToken) &&
+            (identical(other.groupEntityl, groupEntityl) ||
+                other.groupEntityl == groupEntityl) &&
+            (identical(other.rootInTimetable, rootInTimetable) ||
+                other.rootInTimetable == rootInTimetable) &&
+            (identical(other.theme, theme) || other.theme == theme) &&
+            (identical(other.isRusLanguage, isRusLanguage) ||
+                other.isRusLanguage == isRusLanguage) &&
             (identical(other.userState, userState) ||
                 other.userState == userState));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, email, username, id, accessToken, refreshToken, userState);
+  int get hashCode => Object.hash(runtimeType, groupEntityl, rootInTimetable,
+      theme, isRusLanguage, userState);
 
   @JsonKey(ignore: true)
   @override
@@ -233,11 +245,10 @@ class _$_UserEntity implements _UserEntity {
 
 abstract class _UserEntity implements UserEntity {
   const factory _UserEntity(
-          {required final String email,
-          required final String username,
-          required final String id,
-          final String? accessToken,
-          final String? refreshToken,
+          {final GroupEntity? groupEntityl,
+          @JsonKey(defaultValue: true) final bool? rootInTimetable,
+          @JsonKey(defaultValue: true) final bool? theme,
+          @JsonKey(defaultValue: true) final bool? isRusLanguage,
           @JsonKey(ignore: true) final AsyncSnapshot<dynamic>? userState}) =
       _$_UserEntity;
 
@@ -245,15 +256,16 @@ abstract class _UserEntity implements UserEntity {
       _$_UserEntity.fromJson;
 
   @override
-  String get email;
-  @override
-  String get username;
-  @override
-  String get id;
-  @override
-  String? get accessToken;
-  @override
-  String? get refreshToken;
+  GroupEntity? get groupEntityl;
+  @override //флаг чтобы перебрасывать сразу на экран с расписанием
+  @JsonKey(defaultValue: true)
+  bool? get rootInTimetable;
+  @override //флаг для темы
+  @JsonKey(defaultValue: true)
+  bool? get theme;
+  @override //флаг для языка(по умолчанию русский)
+  @JsonKey(defaultValue: true)
+  bool? get isRusLanguage;
   @override
   @JsonKey(ignore: true)
   AsyncSnapshot<dynamic>? get userState;

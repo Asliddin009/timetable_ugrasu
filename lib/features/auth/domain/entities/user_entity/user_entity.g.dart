@@ -8,18 +8,18 @@ part of 'user_entity.dart';
 
 _$_UserEntity _$$_UserEntityFromJson(Map<String, dynamic> json) =>
     _$_UserEntity(
-      email: json['email'] as String,
-      username: json['username'] as String,
-      id: json['id'] as String,
-      accessToken: json['accessToken'] as String?,
-      refreshToken: json['refreshToken'] as String?,
+      groupEntityl: json['groupEntityl'] == null
+          ? null
+          : GroupEntity.fromJson(json['groupEntityl'] as Map<String, dynamic>),
+      rootInTimetable: json['rootInTimetable'] as bool? ?? true,
+      theme: json['theme'] as bool? ?? true,
+      isRusLanguage: json['isRusLanguage'] as bool? ?? true,
     );
 
 Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>
     <String, dynamic>{
-      'email': instance.email,
-      'username': instance.username,
-      'id': instance.id,
-      'accessToken': instance.accessToken,
-      'refreshToken': instance.refreshToken,
+      'groupEntityl': instance.groupEntityl,
+      'rootInTimetable': instance.rootInTimetable,
+      'theme': instance.theme,
+      'isRusLanguage': instance.isRusLanguage,
     };
