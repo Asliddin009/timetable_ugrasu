@@ -17,9 +17,15 @@ class AuthCubit extends HydratedCubit<AuthState> {
 
 
   void finishWelcomeScreen(){
-    emit(AuthState.authorized(const UserEntity(rootInTimetable: true)));
-  }
+    emit(AuthState.waiting());
+    Future.delayed(const Duration(milliseconds: 400)).then((value) => emit(AuthState.authorized(const UserEntity(rootInTimetable: true))));
 
+  }
+  void logout(){
+    emit(AuthState.waiting());
+    Future.delayed(const Duration(milliseconds: 400)).then((value) => emit(AuthState.notAuthorized()));
+
+  }
 
 
   @override

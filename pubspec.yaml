@@ -21,6 +21,8 @@ dependencies:
   json_serializable: ^6.5.1
   google_fonts: ^5.1.0
   smooth_page_indicator: ^1.1.0
+  pretty_dio_logger: ^1.3.1
+  animations: ^2.0.7
   flutter:
     sdk: flutter
 
@@ -58,7 +60,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/welcome_icon.png
+    - assets/light_theme/welcome_icon.png
+    - assets/dark_theme/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

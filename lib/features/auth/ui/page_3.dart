@@ -5,10 +5,8 @@ class Page3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: ElevatedButton(
-      onPressed: () {},
-      child: const Text("Начать использование"),
-    ));
+    return const Center(
+      child: Text("Не останься без расписание, когда серверы упадут и знай когда расписание поменялось"),
+    );
   }
 }

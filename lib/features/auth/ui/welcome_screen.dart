@@ -8,7 +8,6 @@ import 'package:timetable_ugrasu/features/auth/ui/page_1.dart';
 import 'package:timetable_ugrasu/features/auth/ui/page_2.dart';
 import 'package:timetable_ugrasu/features/auth/ui/page_3.dart';
 
-import 'components/welcome_icon.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -21,6 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   PageController pageController = PageController();
+  bool flagFinishWelcomeScreen = false;
 
   @override
   void initState() {
@@ -37,7 +37,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: ConstColor.BACKGROUND_COLOR,
+        //backgroundColor: ConstColor.BACKGROUND_COLOR,
         body: Stack(
           children: [
             Container(
@@ -47,22 +47,51 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             PageView(
               controller: pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  flagFinishWelcomeScreen = (index == 2);
+                });
+              },
               children: const [
                 Page1(),
                 Page2(),
                 Page3(),
               ],
             ),
+            // Панель Навигации снизу
             Container(
               alignment: Alignment(0, 0.75),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GestureDetector( onTap: (){
-                  locator.get<AuthCubit>().finishWelcomeScreen();
-                  },child: Text("Пропустить")),
+                  GestureDetector(
+                      onTap: () {
+                        pageController.previousPage(
+                            duration: Duration(milliseconds: 200),
+                            curve: Curves.easeIn);
+                      },
+                      child: Text("Назад",
+                          style: Theme.of(context).textTheme.displayMedium)),
+
                   SmoothPageIndicator(controller: pageController, count: 3),
-                  GestureDetector(child: Text("Дальше"))
+
+                  !flagFinishWelcomeScreen
+                      ? GestureDetector(
+                          onTap: () {
+                            pageController.nextPage(
+                                duration: Duration(milliseconds: 200),
+                                curve: Curves.easeIn);
+                          },
+                          child: Text(
+                            "Дальше",
+                            style: Theme.of(context).textTheme.displayMedium,
+                          ))
+                      : GestureDetector(
+                          onTap: () {
+                            locator.get<AuthCubit>().finishWelcomeScreen();
+                          },
+                          child: Text("Закончить",
+                              style: Theme.of(context).textTheme.displayMedium))
                 ],
               ),
             )

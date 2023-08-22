@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-
 part 'setting_state.dart';
 
 part 'setting_cubit.freezed.dart';
@@ -14,6 +13,15 @@ part 'setting_cubit.g.dart';
 class SettingCubit extends HydratedCubit<SettingState> {
   SettingCubit() : super(const SettingState(themeMode: ThemeMode.dark));
 
+  void swapTheme() {
+    emit(
+        state.copyWith(
+          asyncSnapshot: AsyncSnapshot.withData(ConnectionState.done, true),
+            themeMode: state.themeMode == ThemeMode.dark
+                ? ThemeMode.light
+                : ThemeMode.dark));
+  }
+
   @override
   SettingState? fromJson(Map<String, dynamic> json) {
     final state = SettingState.fromJson(json);
@@ -22,7 +30,7 @@ class SettingCubit extends HydratedCubit<SettingState> {
 
   @override
   Map<String, dynamic>? toJson(SettingState state) {
-    return Map();
+    return state.toJson();
   }
 
   void stateError(Object error, Emitter emitter) {

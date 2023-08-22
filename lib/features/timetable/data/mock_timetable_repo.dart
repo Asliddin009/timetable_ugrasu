@@ -1,15 +1,13 @@
+/*
 import 'package:injectable/injectable.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/entity/group_entity/group_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/type_table.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/timetable_repo.dart';
 
-import '../../../app/domain/app_api.dart';
-
 
 @Injectable(as: TimetableRepo)
+@test
 class NetTimetableRepo extends TimetableRepo{
-  final AppApi api;
-
-  NetTimetableRepo(this.api);
   @override
   Future getAuditoriums() {
     // TODO: implement getAuditoriums
@@ -17,13 +15,8 @@ class NetTimetableRepo extends TimetableRepo{
   }
 
   @override
-  Future getGroups() async{
-    try {
-      final response = await api.getGroups();
-      return response.data;
-    } catch (_) {
-      rethrow;
-    }
+  Future getGroups()async {
+    final listGroup= await Future.delayed(Duration(seconds: 2),()=>[GroupEntity(name: "1501", groupOid: 1,speciality: "Программная инженерия"),GroupEntity(name: "1101", groupOid: 1,speciality: "ИВТ")]);
   }
 
   @override
@@ -38,4 +31,4 @@ class NetTimetableRepo extends TimetableRepo{
     throw UnimplementedError();
   }
 
-}
+}*/

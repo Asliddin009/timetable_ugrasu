@@ -4,6 +4,10 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      child: const Center(
+        child: Text("Выбирай пары на которые хочешь ходить"),
+      ),
+    );
   }
 }

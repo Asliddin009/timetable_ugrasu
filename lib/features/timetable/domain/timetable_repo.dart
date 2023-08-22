@@ -9,7 +9,6 @@ abstract class TimetableRepo{
     required String todate,
     required String id,
     required TypeTable typeTable,
-
 });
 
 }
