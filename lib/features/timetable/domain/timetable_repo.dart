@@ -7,8 +7,7 @@ abstract class TimetableRepo{
   Future<dynamic> getLessons({
     required String fromdate,
     required String todate,
-    required String id,
-    required TypeTable typeTable,
+    required int groupOid,
 });
 
 }

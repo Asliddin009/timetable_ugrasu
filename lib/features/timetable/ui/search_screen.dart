@@ -1,8 +1,15 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timetable_ugrasu/app/di/init_di.dart';
 import 'package:timetable_ugrasu/app/ui/app_loaded.dart';
+import 'package:timetable_ugrasu/app/ui/utils/get_date_time.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/bloc/search_bloc/search_cubit.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/bloc/timetable_bloc/timetable_cubit.dart';
+import 'package:timetable_ugrasu/features/timetable/ui/timetable_screen.dart';
 
+import '../domain/entity/group_entity/group_entity.dart';
 import 'components/app_bar_search.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -15,10 +22,23 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
-    context.read<SearchCubit>().featchGroups();
+    final searchCubit = context.read<SearchCubit>();
+    //Отпраляем запросы если стайт пустой
+    if (context.read<SearchCubit>().state.listGroupEntity.isEmpty) {
+      context.read<SearchCubit>().featchGroups();
+    }
+    listGroup = searchCubit.state.listGroupEntity;
+    if (context.read<SearchCubit>().state.listGroupEntity.isEmpty) {
+      context.read<SearchCubit>().featchGroups();
+    }
+    if (context.read<SearchCubit>().state.listGroupEntity.isEmpty) {
+      context.read<SearchCubit>().featchGroups();
+    }
   }
 
   TextEditingController controller = TextEditingController();
+  List<GroupEntity> listGroup = [];
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SearchCubit, SearchState>(
@@ -26,66 +46,92 @@ class _SearchScreenState extends State<SearchScreen> {
         builder: (context, state) {
           if (state.listGroupEntity.isNotEmpty) {
             return Scaffold(
-                body: Column(
-              children: [
-                //ListView and TextField
-                Expanded(
-                    flex: 6,
-                    child: Container(
-                      child: Column(
-                        children: [
-                          Expanded(
-                              flex: 2,
-                              child: SearchInputFb2(searchController: controller, hintText: 'Введите номер группы',)),
-                          Expanded(
-                              flex: 4,
-                              child: ListView.builder(
-                                  itemCount: state.listGroupEntity.length,
-                                  itemBuilder: (context, index) => Padding(
-                                        padding: const EdgeInsets.all(15.0),
-                                        child:
-                                        Container(
-                                          height: 25,
-                                          decoration: BoxDecoration(
-                                              color: Colors.indigo,
-                                              borderRadius:
-                                                  BorderRadius.circular(25)),
-                                          width: 50,
-                                        child: Text(state.listGroupEntity[index].name),
-                                        ),
-                                      )))
-                        ],
+              body: Stack(
+                children: [
+                  CustomScrollView(
+                    slivers: [
+                      SliverAppBar(
+                        title: Center(
+                            child: Text(
+                          "Югу Расписание",
+                          style: Theme.of(context).textTheme.displayMedium,
+                        )),
+                        //pinned: true,
+                        snap: true,
+                        floating: true,
+                        bottom: PreferredSize(
+                            preferredSize: const Size.fromHeight(70),
+                            child: Container(
+                              padding: const EdgeInsets.all(15),
+                              child: TextFormField(
+                                  onChanged: (value) {
+                                    listGroup = state.listGroupEntity
+                                        .where((element) =>
+                                            element.name.contains(value))
+                                        .toList();
+                                    setState(() {});
+                                  },
+                                  decoration: const InputDecoration(
+                                    icon: Icon(Icons.search),
+                                    labelStyle: TextStyle(
+                                        letterSpacing: 3,
+                                        fontWeight: FontWeight.w600),
+                                    labelText: 'Поиск...',
+                                    border: OutlineInputBorder(),
+                                  )),
+                            )),
                       ),
-                    )),
-                //icon
-                Expanded(
-                    flex: 4,
-                    child: ListView(
-                      physics: NeverScrollableScrollPhysics(),
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                              //НА будущее
+                      SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (BuildContext context, int index) {
+                            return ListTile(
+                              onTap: () {
+                                int groupOid = listGroup[index].groupOid;
+                                String fromDate = UtilsDate.getFromdate();
+                                String toDate = UtilsDate.getTodate();
+                                log("id= $groupOid, fromDate=$fromDate, toDate= $toDate}");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            TimetableScreen(toDate: toDate, fromDate: fromDate, groupOid: groupOid,)));
+                              },
+                              leading: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.star),
                               ),
+                              tileColor:
+                                  index.isOdd ? Colors.indigo : Colors.black12,
+                              title: Text(
+                                listGroup[index].name.toString(),
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  letterSpacing: 2,
+                                ),
+                              ),
+                              subtitle:
+                                  Text(listGroup[index].speciality.toString()),
+                            );
+                          },
+                          childCount: listGroup.length,
                         ),
-                        Expanded(
-                            flex: 4,
-                            child: Image.asset(
-                              'assets/dark_theme/main_screen_icon.png',
-                              fit: BoxFit.fill,
-                              height: 400,
-                              alignment: Alignment.bottomRight,
-                            ))
-                      ],
-                    )),
-                //icon
-              ],
-            ));
+                      ),
+                    ],
+                  ),
+                  Container(
+                      alignment: Alignment.bottomRight,
+                      child: Image.asset(
+                        "assets/dark_theme/main_screen_icon.png",
+                        fit: BoxFit.fitHeight,
+                        height: 250,
+                      ))
+                ],
+              ),
+            );
           }
           if (state.asyncSnapshot?.connectionState ==
               ConnectionState.waiting) {}
-          return AppLoader();
+          return const AppLoader();
         });
   }
 }
@@ -105,3 +151,7 @@ Container(
 
 
 */
+
+/*
+
+* */

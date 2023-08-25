@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
@@ -25,8 +27,20 @@ class DioAppApi implements AppApi {
     try {
       return dio.get("groups");
     } catch (_) {
+      print("Ошибка в data");
       rethrow;
     }
   }
 
+
+
+  Future getLessons({required String fromdate, required String todate, required int groupOid}) {
+    try {
+      print("lessons?fromdate=$fromdate&todate=$todate&groupOid=$groupOid");
+      return dio.get("lessons?fromdate=$fromdate&todate=$todate&groupOid=$groupOid");
+    } catch (_) {
+      print("Ошибка в data");
+      rethrow;
+    }
+  }
 }

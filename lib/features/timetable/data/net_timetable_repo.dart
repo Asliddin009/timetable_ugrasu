@@ -33,9 +33,15 @@ class NetTimetableRepo extends TimetableRepo{
   }
 
   @override
-  Future getLessons({required String fromdate, required String todate, required String id, required TypeTable typeTable}) {
-    // TODO: implement getLessons
-    throw UnimplementedError();
+  Future getLessons({required String fromdate, required String todate, required int groupOid})async {
+    try {
+      final response = await api.getLessons(fromdate: fromdate, todate: todate, groupOid: groupOid);
+
+
+      return response.data;
+    } catch (_) {
+      rethrow;
+    }
   }
 
 }

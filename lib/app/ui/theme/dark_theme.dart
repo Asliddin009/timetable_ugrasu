@@ -5,15 +5,16 @@ import 'package:timetable_ugrasu/app/const/color_const.dart';
 ThemeData darkTheme = ThemeData.dark().copyWith(
   textTheme: TextTheme(
     displayLarge: GoogleFonts.pacifico().copyWith(
-      fontSize: 35,
+      fontSize: 30,
       color: Colors.white,
     ),
     displayMedium: GoogleFonts.pacifico().copyWith(
-      fontSize: 25,
+      fontSize: 20,
+      letterSpacing: 5,
       color: Colors.white,
     ),
     displaySmall: GoogleFonts.pacifico().copyWith(
-      fontSize: 20,
+      fontSize: 14,
       letterSpacing: 5,
       color: Colors.white,
     ),

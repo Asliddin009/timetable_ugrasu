@@ -1,6 +1,6 @@
 /*
 import 'package:injectable/injectable.dart';
-import 'package:timetable_ugrasu/features/timetable/domain/entity/group_entity/group_entity.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/entity/group_entity/auditorium_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/type_table.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/timetable_repo.dart';
 

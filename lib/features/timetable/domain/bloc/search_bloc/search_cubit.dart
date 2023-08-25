@@ -30,6 +30,8 @@ class SearchCubit extends HydratedCubit<SearchState> {
     });
   }
 
+
+
   @override
   SearchState? fromJson(Map<String, dynamic> json) {
     final state = SearchState.fromJson(json);
@@ -38,6 +40,6 @@ class SearchCubit extends HydratedCubit<SearchState> {
 
   @override
   Map<String, dynamic>? toJson(SearchState state) {
-    return Map();
+    return state.toJson();
   }
 }
