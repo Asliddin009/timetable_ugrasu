@@ -8,8 +8,8 @@ part of 'lessons_entity.dart';
 
 _$_LessonsWeekEntity _$$_LessonsWeekEntityFromJson(Map<String, dynamic> json) =>
     _$_LessonsWeekEntity(
-      todate: json['todate'] as String?,
-      fromdate: json['fromdate'] as String?,
+      todate: DateTime.parse(json['todate'] as String),
+      fromdate: DateTime.parse(json['fromdate'] as String),
       list: (json['list'] as List<dynamic>)
           .map((e) => LessonEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -18,8 +18,8 @@ _$_LessonsWeekEntity _$$_LessonsWeekEntityFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_LessonsWeekEntityToJson(
         _$_LessonsWeekEntity instance) =>
     <String, dynamic>{
-      'todate': instance.todate,
-      'fromdate': instance.fromdate,
+      'todate': instance.todate.toIso8601String(),
+      'fromdate': instance.fromdate.toIso8601String(),
       'list': instance.list,
     };
 

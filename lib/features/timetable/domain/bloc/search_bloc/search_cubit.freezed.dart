@@ -24,9 +24,9 @@ mixin _$SearchState {
   AsyncSnapshot<dynamic>? get asyncSnapshot =>
       throw _privateConstructorUsedError;
   List<GroupEntity> get listGroupEntity => throw _privateConstructorUsedError;
-  List<GroupEntity> get listAuditoriumEntity =>
+  List<AuditoriumEntity> get listAuditoriumEntity =>
       throw _privateConstructorUsedError;
-  List<GroupEntity> get listLecturerEntity =>
+  List<LecturerEntity> get listLecturerEntity =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,8 +44,8 @@ abstract class $SearchStateCopyWith<$Res> {
   $Res call(
       {@JsonKey(ignore: true) AsyncSnapshot<dynamic>? asyncSnapshot,
       List<GroupEntity> listGroupEntity,
-      List<GroupEntity> listAuditoriumEntity,
-      List<GroupEntity> listLecturerEntity});
+      List<AuditoriumEntity> listAuditoriumEntity,
+      List<LecturerEntity> listLecturerEntity});
 }
 
 /// @nodoc
@@ -78,11 +78,11 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
       listAuditoriumEntity: null == listAuditoriumEntity
           ? _value.listAuditoriumEntity
           : listAuditoriumEntity // ignore: cast_nullable_to_non_nullable
-              as List<GroupEntity>,
+              as List<AuditoriumEntity>,
       listLecturerEntity: null == listLecturerEntity
           ? _value.listLecturerEntity
           : listLecturerEntity // ignore: cast_nullable_to_non_nullable
-              as List<GroupEntity>,
+              as List<LecturerEntity>,
     ) as $Val);
   }
 }
@@ -98,8 +98,8 @@ abstract class _$$_SearchStateCopyWith<$Res>
   $Res call(
       {@JsonKey(ignore: true) AsyncSnapshot<dynamic>? asyncSnapshot,
       List<GroupEntity> listGroupEntity,
-      List<GroupEntity> listAuditoriumEntity,
-      List<GroupEntity> listLecturerEntity});
+      List<AuditoriumEntity> listAuditoriumEntity,
+      List<LecturerEntity> listLecturerEntity});
 }
 
 /// @nodoc
@@ -130,11 +130,11 @@ class __$$_SearchStateCopyWithImpl<$Res>
       listAuditoriumEntity: null == listAuditoriumEntity
           ? _value._listAuditoriumEntity
           : listAuditoriumEntity // ignore: cast_nullable_to_non_nullable
-              as List<GroupEntity>,
+              as List<AuditoriumEntity>,
       listLecturerEntity: null == listLecturerEntity
           ? _value._listLecturerEntity
           : listLecturerEntity // ignore: cast_nullable_to_non_nullable
-              as List<GroupEntity>,
+              as List<LecturerEntity>,
     ));
   }
 }
@@ -145,8 +145,8 @@ class _$_SearchState implements _SearchState {
   const _$_SearchState(
       {@JsonKey(ignore: true) this.asyncSnapshot,
       required final List<GroupEntity> listGroupEntity,
-      required final List<GroupEntity> listAuditoriumEntity,
-      required final List<GroupEntity> listLecturerEntity})
+      required final List<AuditoriumEntity> listAuditoriumEntity,
+      required final List<LecturerEntity> listLecturerEntity})
       : _listGroupEntity = listGroupEntity,
         _listAuditoriumEntity = listAuditoriumEntity,
         _listLecturerEntity = listLecturerEntity;
@@ -165,18 +165,18 @@ class _$_SearchState implements _SearchState {
     return EqualUnmodifiableListView(_listGroupEntity);
   }
 
-  final List<GroupEntity> _listAuditoriumEntity;
+  final List<AuditoriumEntity> _listAuditoriumEntity;
   @override
-  List<GroupEntity> get listAuditoriumEntity {
+  List<AuditoriumEntity> get listAuditoriumEntity {
     if (_listAuditoriumEntity is EqualUnmodifiableListView)
       return _listAuditoriumEntity;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_listAuditoriumEntity);
   }
 
-  final List<GroupEntity> _listLecturerEntity;
+  final List<LecturerEntity> _listLecturerEntity;
   @override
-  List<GroupEntity> get listLecturerEntity {
+  List<LecturerEntity> get listLecturerEntity {
     if (_listLecturerEntity is EqualUnmodifiableListView)
       return _listLecturerEntity;
     // ignore: implicit_dynamic_type
@@ -230,8 +230,8 @@ abstract class _SearchState implements SearchState {
   const factory _SearchState(
       {@JsonKey(ignore: true) final AsyncSnapshot<dynamic>? asyncSnapshot,
       required final List<GroupEntity> listGroupEntity,
-      required final List<GroupEntity> listAuditoriumEntity,
-      required final List<GroupEntity> listLecturerEntity}) = _$_SearchState;
+      required final List<AuditoriumEntity> listAuditoriumEntity,
+      required final List<LecturerEntity> listLecturerEntity}) = _$_SearchState;
 
   factory _SearchState.fromJson(Map<String, dynamic> json) =
       _$_SearchState.fromJson;
@@ -242,9 +242,9 @@ abstract class _SearchState implements SearchState {
   @override
   List<GroupEntity> get listGroupEntity;
   @override
-  List<GroupEntity> get listAuditoriumEntity;
+  List<AuditoriumEntity> get listAuditoriumEntity;
   @override
-  List<GroupEntity> get listLecturerEntity;
+  List<LecturerEntity> get listLecturerEntity;
   @override
   @JsonKey(ignore: true)
   _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>

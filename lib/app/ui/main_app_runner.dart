@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
@@ -20,9 +21,9 @@ class MainAppRunner implements AppRunner {
 
   @override
   Future<void> run(AppBuilder appBuilder) async {
-    HydratedBloc.storage = await HydratedStorage.build(
-        storageDirectory: await getApplicationDocumentsDirectory());
-    await preloadData();
+      HydratedBloc.storage = await HydratedStorage.build(
+          storageDirectory: await getApplicationDocumentsDirectory());
+      await preloadData();
     runApp(appBuilder.buildApp());
   }
 }

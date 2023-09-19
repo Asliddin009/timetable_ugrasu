@@ -11,8 +11,7 @@ class Page1 extends StatelessWidget {
     return Container(
       child: IllustrationFb5(
         url: context.read<SettingCubit>().state.themeMode==ThemeMode.dark?"assets/dark_theme/welcome_icon.png":"assets/light_theme/welcome_icon.png",
-        size: Size(MediaQuery.of(context).size.height,
-            MediaQuery.of(context).size.width),
+        size: const Size(100,100),
       ),
     );
   }

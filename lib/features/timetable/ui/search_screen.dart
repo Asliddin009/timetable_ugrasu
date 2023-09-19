@@ -1,16 +1,12 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timetable_ugrasu/app/di/init_di.dart';
 import 'package:timetable_ugrasu/app/ui/app_loaded.dart';
-import 'package:timetable_ugrasu/app/ui/utils/get_date_time.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/bloc/search_bloc/search_cubit.dart';
-import 'package:timetable_ugrasu/features/timetable/domain/bloc/timetable_bloc/timetable_cubit.dart';
-import 'package:timetable_ugrasu/features/timetable/ui/timetable_screen.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/entity/auditorium_entity/auditorium_entity.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/entity/lecturer_entity/lecturer_entity.dart';
 
 import '../domain/entity/group_entity/group_entity.dart';
-import 'components/app_bar_search.dart';
+import 'components/search_list_tile/search_list_tile.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -20,41 +16,55 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  TextEditingController controller = TextEditingController();
+  List<dynamic> listEntity = [];
+
   @override
   void initState() {
     final searchCubit = context.read<SearchCubit>();
-    //Отпраляем запросы если стайт пустой
     if (context.read<SearchCubit>().state.listGroupEntity.isEmpty) {
-      context.read<SearchCubit>().featchGroups();
+      context.read<SearchCubit>().featchGroups(true).then((value) {
+        listEntity.addAll(searchCubit.state.listGroupEntity);
+        setState(() {});
+      });
+    } else {
+      listEntity.addAll(searchCubit.state.listGroupEntity);
     }
-    listGroup = searchCubit.state.listGroupEntity;
-    if (context.read<SearchCubit>().state.listGroupEntity.isEmpty) {
-      context.read<SearchCubit>().featchGroups();
+   if (context.read<SearchCubit>().state.listAuditoriumEntity.isEmpty) {
+      context.read<SearchCubit>().featchAuditoriums(true).then((value) {
+        listEntity.addAll(searchCubit.state.listAuditoriumEntity) ;
+        setState(() {});
+      });
+    } else {
+      listEntity.addAll(searchCubit.state.listAuditoriumEntity);
     }
-    if (context.read<SearchCubit>().state.listGroupEntity.isEmpty) {
-      context.read<SearchCubit>().featchGroups();
+    if (context.read<SearchCubit>().state.listLecturerEntity.isEmpty) {
+      context.read<SearchCubit>().featchLectures(true).then((value) {
+        listEntity.addAll(searchCubit.state.listLecturerEntity);
+        setState(() {});
+      });
+    } else {
+      listEntity.addAll(searchCubit.state.listLecturerEntity);
     }
-  }
 
-  TextEditingController controller = TextEditingController();
-  List<GroupEntity> listGroup = [];
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SearchCubit, SearchState>(
         listener: (context, state) {},
         builder: (context, state) {
-          if (state.listGroupEntity.isNotEmpty) {
+          if (state.asyncSnapshot!=const AsyncSnapshot.waiting()) {
             return Scaffold(
               body: Stack(
                 children: [
                   CustomScrollView(
                     slivers: [
                       SliverAppBar(
-                        title: Center(
+                        title: const Center(
                             child: Text(
                           "Югу Расписание",
-                          style: Theme.of(context).textTheme.displayMedium,
+                          style: TextStyle(fontSize: 25, letterSpacing: 2),
                         )),
                         //pinned: true,
                         snap: true,
@@ -65,65 +75,64 @@ class _SearchScreenState extends State<SearchScreen> {
                               padding: const EdgeInsets.all(15),
                               child: TextFormField(
                                   onChanged: (value) {
-                                    listGroup = state.listGroupEntity
+                                    listEntity=[];
+                                    listEntity.addAll(state.listGroupEntity
                                         .where((element) =>
                                             element.name.contains(value))
-                                        .toList();
+                                        .toList());
+
+                                    listEntity.addAll(state.listLecturerEntity
+                                        .where((element) =>
+                                        element.fio.toUpperCase().contains(value.toUpperCase()))
+                                        .toList());
+
+                                    listEntity.addAll(state.listAuditoriumEntity
+                                        .where((element) =>
+                                        (element.number??" ").contains(value))
+                                        .toList());
+
                                     setState(() {});
                                   },
                                   decoration: const InputDecoration(
                                     icon: Icon(Icons.search),
-                                    labelStyle: TextStyle(
-                                        letterSpacing: 3,
-                                        fontWeight: FontWeight.w600),
+                                    labelStyle: TextStyle(letterSpacing: 2),
                                     labelText: 'Поиск...',
                                     border: OutlineInputBorder(),
                                   )),
                             )),
+                        actions: [
+                          IconButton(
+                              onPressed: () {
+                                context.read<SearchCubit>().logout();
+                                setState(() {});
+                              },
+                              icon: const Icon(Icons.logout)),
+                          IconButton(
+                              onPressed: () {
+                                context.read<SearchCubit>()
+                                  ..logout()
+                                  ..featchGroups(false);
+                                setState(() {});
+                              },
+                              icon: const Icon(Icons.refresh))
+                        ],
                       ),
                       SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (BuildContext context, int index) {
-                            return ListTile(
-                              onTap: () {
-                                int groupOid = listGroup[index].groupOid;
-                                String fromDate = UtilsDate.getFromdate();
-                                String toDate = UtilsDate.getTodate();
-                                log("id= $groupOid, fromDate=$fromDate, toDate= $toDate}");
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            TimetableScreen(toDate: toDate, fromDate: fromDate, groupOid: groupOid,)));
-                              },
-                              leading: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.star),
-                              ),
-                              tileColor:
-                                  index.isOdd ? Colors.indigo : Colors.black12,
-                              title: Text(
-                                listGroup[index].name.toString(),
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  letterSpacing: 2,
-                                ),
-                              ),
-                              subtitle:
-                                  Text(listGroup[index].speciality.toString()),
-                            );
+                            return SearchListTile(item: listEntity[index], indexOdd: index.isOdd,);
                           },
-                          childCount: listGroup.length,
+                          childCount: listEntity.length,
                         ),
                       ),
                     ],
                   ),
-                  Container(
-                      alignment: Alignment.bottomRight,
+                   Container(
+                      alignment: Alignment.bottomLeft,
                       child: Image.asset(
                         "assets/dark_theme/main_screen_icon.png",
                         fit: BoxFit.fitHeight,
-                        height: 250,
+                        height: 200,
                       ))
                 ],
               ),
@@ -135,23 +144,3 @@ class _SearchScreenState extends State<SearchScreen> {
         });
   }
 }
-
-/*
-
-Container(
-                                alignment: Alignment.bottomCenter,
-                                padding: EdgeInsets.only(
-                                    bottom: 20, left: 20, right: 20),
-                                child: TextFormField(
-                                    decoration: const InputDecoration(
-                                  labelText: 'Введите номер группы',
-                                  border: OutlineInputBorder(),
-                                )),
-                              )
-
-
-*/
-
-/*
-
-* */

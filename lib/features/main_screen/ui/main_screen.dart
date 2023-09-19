@@ -17,7 +17,9 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: _rootBody(_selectedIndex),
 
-      bottomNavigationBar: BottomNavigationBar(items: const <BottomNavigationBarItem> [
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        items: const <BottomNavigationBarItem> [
         BottomNavigationBarItem(icon:Icon(Icons.settings_outlined,),label: "Учебный План"),
         BottomNavigationBarItem(icon:Icon(Icons.settings_outlined),label: "Расписание"),
         BottomNavigationBarItem(icon:Icon(Icons.settings_outlined),label: "Настройки"),

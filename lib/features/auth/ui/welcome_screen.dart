@@ -8,7 +8,6 @@ import 'package:timetable_ugrasu/features/auth/ui/page_1.dart';
 import 'package:timetable_ugrasu/features/auth/ui/page_2.dart';
 import 'package:timetable_ugrasu/features/auth/ui/page_3.dart';
 
-
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
 
@@ -39,63 +38,47 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     return Scaffold(
         //backgroundColor: ConstColor.BACKGROUND_COLOR,
         body: Stack(
-          children: [
-            Container(
-              alignment: const Alignment(0, -0.9),
-              child: Text("Расписание ЮГУ",
-                  style: Theme.of(context).textTheme.displayLarge),
-            ),
-            PageView(
-              controller: pageController,
-              onPageChanged: (index) {
-                setState(() {
-                  flagFinishWelcomeScreen = (index == 2);
-                });
-              },
-              children: const [
-                Page1(),
-                Page2(),
-                Page3(),
-              ],
-            ),
-            // Панель Навигации снизу
-            Container(
-              alignment: Alignment(0, 0.75),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                      onTap: () {
-                        pageController.previousPage(
-                            duration: Duration(milliseconds: 200),
-                            curve: Curves.easeIn);
-                      },
-                      child: Text("Назад",
-                          style: Theme.of(context).textTheme.displayMedium)),
-
-                  SmoothPageIndicator(controller: pageController, count: 3),
-
-                  !flagFinishWelcomeScreen
-                      ? GestureDetector(
-                          onTap: () {
-                            pageController.nextPage(
-                                duration: Duration(milliseconds: 200),
-                                curve: Curves.easeIn);
-                          },
-                          child: Text(
-                            "Дальше",
-                            style: Theme.of(context).textTheme.displayMedium,
-                          ))
-                      : GestureDetector(
-                          onTap: () {
-                            locator.get<AuthCubit>().finishWelcomeScreen();
-                          },
-                          child: Text("Закончить",
-                              style: Theme.of(context).textTheme.displayMedium))
-                ],
-              ),
-            )
+      children: [
+        Container(
+          alignment: const Alignment(0, -0.9),
+          child: Text("Расписание ЮГУ",
+              style: Theme.of(context).textTheme.displayLarge),
+        ),
+        PageView(
+          controller: pageController,
+          onPageChanged: (index) {
+            setState(() {
+              flagFinishWelcomeScreen = (index == 2);
+            });
+          },
+          children: const [
+            Page1(),
+            Page2(),
+            Page3(),
           ],
-        ));
+        ),
+        // Панель Навигации снизу
+        Container(
+          alignment: Alignment(0, 0.75),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SmoothPageIndicator(
+                controller: pageController,
+                count: 3,
+                effect: WormEffect(
+                  activeDotColor: Theme.of(context).primaryColor,
+                  type: WormType.thin,
+                ),
+              ),
+              const SizedBox(height: 25,),
+              ElevatedButton(onPressed: (){                        locator.get<AuthCubit>().finishWelcomeScreen();
+              }, child: const Text("Пропустить"))
+              ,const SizedBox(height: 50,)
+            ],
+          ),
+        )
+      ],
+    ));
   }
 }

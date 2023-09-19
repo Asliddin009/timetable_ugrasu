@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -25,21 +25,43 @@ class DioAppApi implements AppApi {
   @override
   Future getGroups() {
     try {
+      log("Получили Группы");
       return dio.get("groups");
     } catch (_) {
-      print("Ошибка в data");
+      log("Ошибка в data");
       rethrow;
     }
   }
 
-
-
+  @override
   Future getLessons({required String fromdate, required String todate, required int groupOid}) {
     try {
-      print("lessons?fromdate=$fromdate&todate=$todate&groupOid=$groupOid");
+      log("lessons?fromdate=$fromdate&todate=$todate&groupOid=$groupOid");
       return dio.get("lessons?fromdate=$fromdate&todate=$todate&groupOid=$groupOid");
     } catch (_) {
-      print("Ошибка в data");
+      log("Ошибка в data");
+      rethrow;
+    }
+  }
+
+  @override
+  Future getAuditoriums() {
+    try {
+      log("Получили Аудитории");
+      return dio.get("auditoriums");
+    } catch (_) {
+      log("Ошибка в data");
+      rethrow;
+    }
+  }
+
+  @override
+  Future getLectures() {
+    try {
+      log("Получили Преподов");
+      return dio.get("lecturers");
+    } catch (_) {
+      log("Ошибка в data");
       rethrow;
     }
   }

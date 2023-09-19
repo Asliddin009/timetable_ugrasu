@@ -6,8 +6,8 @@ class SearchState with _$SearchState {
     @JsonKey(ignore: true) AsyncSnapshot? asyncSnapshot,
 
     required List<GroupEntity> listGroupEntity,
-    required List<GroupEntity> listAuditoriumEntity,
-    required List<GroupEntity> listLecturerEntity,
+    required List<AuditoriumEntity> listAuditoriumEntity,
+    required List<LecturerEntity> listLecturerEntity,
 
 
   })=_SearchState;

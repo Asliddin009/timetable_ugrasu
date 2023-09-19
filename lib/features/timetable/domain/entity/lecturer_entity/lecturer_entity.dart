@@ -8,13 +8,12 @@ class LecturerEntity with _$LecturerEntity {
   factory LecturerEntity.fromJson(Map<String, dynamic> json) =>
       _$LecturerEntityFromJson(json);
   const factory LecturerEntity({
-    required String name,
-    String? fio,
-    String? email,
-    String? lecturer_rank,
-    String? chair,
-
     required int lecturerOid,
+    required String fio,
+    String? email,
+    //String? lecturer_rank,
+    //String? chair,
+    //String? shortFIO,
   }) = _LecturerEntity;
 
 }

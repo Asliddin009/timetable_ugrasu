@@ -8,8 +8,8 @@ class IllustrationFb5 extends StatelessWidget {
     return Image.asset(
       url,
       fit: BoxFit.fitWidth,
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width / 2,
+      height: size?.height??100,
+      width: size?.width?? 100,
     );
   }
 }

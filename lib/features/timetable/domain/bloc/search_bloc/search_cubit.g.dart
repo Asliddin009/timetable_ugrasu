@@ -12,10 +12,10 @@ _$_SearchState _$$_SearchStateFromJson(Map<String, dynamic> json) =>
           .map((e) => GroupEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
       listAuditoriumEntity: (json['listAuditoriumEntity'] as List<dynamic>)
-          .map((e) => GroupEntity.fromJson(e as Map<String, dynamic>))
+          .map((e) => AuditoriumEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
       listLecturerEntity: (json['listLecturerEntity'] as List<dynamic>)
-          .map((e) => GroupEntity.fromJson(e as Map<String, dynamic>))
+          .map((e) => LecturerEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

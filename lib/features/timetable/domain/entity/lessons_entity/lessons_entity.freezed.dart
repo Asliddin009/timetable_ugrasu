@@ -20,8 +20,8 @@ LessonsWeekEntity _$LessonsWeekEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LessonsWeekEntity {
-  String? get todate => throw _privateConstructorUsedError;
-  String? get fromdate => throw _privateConstructorUsedError;
+  DateTime get todate => throw _privateConstructorUsedError;
+  DateTime get fromdate => throw _privateConstructorUsedError;
   List<LessonEntity> get list => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $LessonsWeekEntityCopyWith<$Res> {
           LessonsWeekEntity value, $Res Function(LessonsWeekEntity) then) =
       _$LessonsWeekEntityCopyWithImpl<$Res, LessonsWeekEntity>;
   @useResult
-  $Res call({String? todate, String? fromdate, List<LessonEntity> list});
+  $Res call({DateTime todate, DateTime fromdate, List<LessonEntity> list});
 }
 
 /// @nodoc
@@ -52,19 +52,19 @@ class _$LessonsWeekEntityCopyWithImpl<$Res, $Val extends LessonsWeekEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todate = freezed,
-    Object? fromdate = freezed,
+    Object? todate = null,
+    Object? fromdate = null,
     Object? list = null,
   }) {
     return _then(_value.copyWith(
-      todate: freezed == todate
+      todate: null == todate
           ? _value.todate
           : todate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromdate: freezed == fromdate
+              as DateTime,
+      fromdate: null == fromdate
           ? _value.fromdate
           : fromdate // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime,
       list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$_LessonsWeekEntityCopyWith<$Res>
       __$$_LessonsWeekEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? todate, String? fromdate, List<LessonEntity> list});
+  $Res call({DateTime todate, DateTime fromdate, List<LessonEntity> list});
 }
 
 /// @nodoc
@@ -95,19 +95,19 @@ class __$$_LessonsWeekEntityCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todate = freezed,
-    Object? fromdate = freezed,
+    Object? todate = null,
+    Object? fromdate = null,
     Object? list = null,
   }) {
     return _then(_$_LessonsWeekEntity(
-      todate: freezed == todate
+      todate: null == todate
           ? _value.todate
           : todate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromdate: freezed == fromdate
+              as DateTime,
+      fromdate: null == fromdate
           ? _value.fromdate
           : fromdate // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime,
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -120,16 +120,18 @@ class __$$_LessonsWeekEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_LessonsWeekEntity implements _LessonsWeekEntity {
   const _$_LessonsWeekEntity(
-      {this.todate, this.fromdate, required final List<LessonEntity> list})
+      {required this.todate,
+      required this.fromdate,
+      required final List<LessonEntity> list})
       : _list = list;
 
   factory _$_LessonsWeekEntity.fromJson(Map<String, dynamic> json) =>
       _$$_LessonsWeekEntityFromJson(json);
 
   @override
-  final String? todate;
+  final DateTime todate;
   @override
-  final String? fromdate;
+  final DateTime fromdate;
   final List<LessonEntity> _list;
   @override
   List<LessonEntity> get list {
@@ -176,17 +178,17 @@ class _$_LessonsWeekEntity implements _LessonsWeekEntity {
 
 abstract class _LessonsWeekEntity implements LessonsWeekEntity {
   const factory _LessonsWeekEntity(
-      {final String? todate,
-      final String? fromdate,
+      {required final DateTime todate,
+      required final DateTime fromdate,
       required final List<LessonEntity> list}) = _$_LessonsWeekEntity;
 
   factory _LessonsWeekEntity.fromJson(Map<String, dynamic> json) =
       _$_LessonsWeekEntity.fromJson;
 
   @override
-  String? get todate;
+  DateTime get todate;
   @override
-  String? get fromdate;
+  DateTime get fromdate;
   @override
   List<LessonEntity> get list;
   @override

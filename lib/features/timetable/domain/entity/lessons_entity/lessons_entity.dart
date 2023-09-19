@@ -9,8 +9,8 @@ part 'lessons_entity.g.dart';
 class LessonsWeekEntity with _$LessonsWeekEntity {
 
       const factory LessonsWeekEntity({
-            String? todate,
-            String? fromdate,
+            required DateTime todate,
+            required DateTime fromdate,
             required List<LessonEntity> list,
 }) = _LessonsWeekEntity;
 

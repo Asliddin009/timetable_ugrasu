@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/entity/auditorium_entity/auditorium_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/group_entity/group_entity.dart';
+import 'package:timetable_ugrasu/features/timetable/domain/entity/lecturer_entity/lecturer_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/timetable_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -19,9 +21,12 @@ class SearchCubit extends HydratedCubit<SearchState> {
   final TimetableRepo timetableRepo;
 
 
-  Future<void> featchGroups()async {
-    emit(state.copyWith(asyncSnapshot: AsyncSnapshot.waiting()));
-    await timetableRepo.getGroups().then((value){
+
+
+
+  Future<void> featchGroups(bool fromAssets)async {
+    emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
+    await timetableRepo.getGroups(fromAssets).then((value){
       Iterable iterable= value;
       emit(state.copyWith(
         listGroupEntity: iterable.map((e) => GroupEntity.fromJson(e)).toList()
@@ -29,8 +34,30 @@ class SearchCubit extends HydratedCubit<SearchState> {
       ));
     });
   }
+  Future<void> featchLectures(bool fromAssets)async {
+    emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
+    await timetableRepo.getLectures(fromAssets).then((value){
+      Iterable iterable= value;
+      emit(state.copyWith(
+          listLecturerEntity: iterable.map((e) => LecturerEntity.fromJson(e)).toList()
+          , asyncSnapshot: const AsyncSnapshot.withData(ConnectionState.done, true)
+      ));
+    });
+  }
+  Future<void> featchAuditoriums(bool fromAssets)async {
+    emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
+    await timetableRepo.getAuditoriums(fromAssets).then((value){
+      Iterable iterable= value;
+      emit(state.copyWith(
+          listAuditoriumEntity: iterable.map((e) => AuditoriumEntity.fromJson(e)).toList()
+          , asyncSnapshot: const AsyncSnapshot.withData(ConnectionState.done, true)
+      ));
+    });
+  }
 
-
+  void logout(){
+    emit(state.copyWith(listGroupEntity: [],listAuditoriumEntity: [],listLecturerEntity: []));
+  }
 
   @override
   SearchState? fromJson(Map<String, dynamic> json) {
