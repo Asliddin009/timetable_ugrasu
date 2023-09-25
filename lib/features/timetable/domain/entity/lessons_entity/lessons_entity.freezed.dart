@@ -211,6 +211,7 @@ mixin _$LessonEntity {
   String get dayOfWeekString => throw _privateConstructorUsedError;
   String get discipline => throw _privateConstructorUsedError;
   String get endLesson => throw _privateConstructorUsedError;
+  String get contentTableOfLessonsName => throw _privateConstructorUsedError;
   String? get group => throw _privateConstructorUsedError;
   String get lecturer => throw _privateConstructorUsedError;
   String? get lecturerEmail => throw _privateConstructorUsedError;
@@ -240,6 +241,7 @@ abstract class $LessonEntityCopyWith<$Res> {
       String dayOfWeekString,
       String discipline,
       String endLesson,
+      String contentTableOfLessonsName,
       String? group,
       String lecturer,
       String? lecturerEmail,
@@ -270,6 +272,7 @@ class _$LessonEntityCopyWithImpl<$Res, $Val extends LessonEntity>
     Object? dayOfWeekString = null,
     Object? discipline = null,
     Object? endLesson = null,
+    Object? contentTableOfLessonsName = null,
     Object? group = freezed,
     Object? lecturer = null,
     Object? lecturerEmail = freezed,
@@ -310,6 +313,10 @@ class _$LessonEntityCopyWithImpl<$Res, $Val extends LessonEntity>
       endLesson: null == endLesson
           ? _value.endLesson
           : endLesson // ignore: cast_nullable_to_non_nullable
+              as String,
+      contentTableOfLessonsName: null == contentTableOfLessonsName
+          ? _value.contentTableOfLessonsName
+          : contentTableOfLessonsName // ignore: cast_nullable_to_non_nullable
               as String,
       group: freezed == group
           ? _value.group
@@ -360,6 +367,7 @@ abstract class _$$_LessonEntityCopyWith<$Res>
       String dayOfWeekString,
       String discipline,
       String endLesson,
+      String contentTableOfLessonsName,
       String? group,
       String lecturer,
       String? lecturerEmail,
@@ -388,6 +396,7 @@ class __$$_LessonEntityCopyWithImpl<$Res>
     Object? dayOfWeekString = null,
     Object? discipline = null,
     Object? endLesson = null,
+    Object? contentTableOfLessonsName = null,
     Object? group = freezed,
     Object? lecturer = null,
     Object? lecturerEmail = freezed,
@@ -428,6 +437,10 @@ class __$$_LessonEntityCopyWithImpl<$Res>
       endLesson: null == endLesson
           ? _value.endLesson
           : endLesson // ignore: cast_nullable_to_non_nullable
+              as String,
+      contentTableOfLessonsName: null == contentTableOfLessonsName
+          ? _value.contentTableOfLessonsName
+          : contentTableOfLessonsName // ignore: cast_nullable_to_non_nullable
               as String,
       group: freezed == group
           ? _value.group
@@ -473,6 +486,7 @@ class _$_LessonEntity implements _LessonEntity {
       required this.dayOfWeekString,
       required this.discipline,
       required this.endLesson,
+      required this.contentTableOfLessonsName,
       this.group,
       required this.lecturer,
       this.lecturerEmail,
@@ -501,6 +515,8 @@ class _$_LessonEntity implements _LessonEntity {
   @override
   final String endLesson;
   @override
+  final String contentTableOfLessonsName;
+  @override
   final String? group;
   @override
   final String lecturer;
@@ -518,7 +534,7 @@ class _$_LessonEntity implements _LessonEntity {
 
   @override
   String toString() {
-    return 'LessonEntity(auditorium: $auditorium, beginLesson: $beginLesson, building: $building, date: $date, dayOfWeek: $dayOfWeek, dayOfWeekString: $dayOfWeekString, discipline: $discipline, endLesson: $endLesson, group: $group, lecturer: $lecturer, lecturerEmail: $lecturerEmail, kindOfWork: $kindOfWork, lecturer_rank: $lecturer_rank, lecturer_title: $lecturer_title, isFilter: $isFilter)';
+    return 'LessonEntity(auditorium: $auditorium, beginLesson: $beginLesson, building: $building, date: $date, dayOfWeek: $dayOfWeek, dayOfWeekString: $dayOfWeekString, discipline: $discipline, endLesson: $endLesson, contentTableOfLessonsName: $contentTableOfLessonsName, group: $group, lecturer: $lecturer, lecturerEmail: $lecturerEmail, kindOfWork: $kindOfWork, lecturer_rank: $lecturer_rank, lecturer_title: $lecturer_title, isFilter: $isFilter)';
   }
 
   @override
@@ -541,6 +557,9 @@ class _$_LessonEntity implements _LessonEntity {
                 other.discipline == discipline) &&
             (identical(other.endLesson, endLesson) ||
                 other.endLesson == endLesson) &&
+            (identical(other.contentTableOfLessonsName,
+                    contentTableOfLessonsName) ||
+                other.contentTableOfLessonsName == contentTableOfLessonsName) &&
             (identical(other.group, group) || other.group == group) &&
             (identical(other.lecturer, lecturer) ||
                 other.lecturer == lecturer) &&
@@ -568,6 +587,7 @@ class _$_LessonEntity implements _LessonEntity {
       dayOfWeekString,
       discipline,
       endLesson,
+      contentTableOfLessonsName,
       group,
       lecturer,
       lecturerEmail,
@@ -600,6 +620,7 @@ abstract class _LessonEntity implements LessonEntity {
       required final String dayOfWeekString,
       required final String discipline,
       required final String endLesson,
+      required final String contentTableOfLessonsName,
       final String? group,
       required final String lecturer,
       final String? lecturerEmail,
@@ -627,6 +648,8 @@ abstract class _LessonEntity implements LessonEntity {
   String get discipline;
   @override
   String get endLesson;
+  @override
+  String get contentTableOfLessonsName;
   @override
   String? get group;
   @override

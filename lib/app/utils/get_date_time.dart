@@ -20,7 +20,8 @@ abstract class UtilsDate {
     return dateTimeObject;
   }
 
-  static DateTime addDay(DateTime now,int day)=>DateTime(now.year,now.month,now.day+day);
+  static DateTime addDay(DateTime now, int day) =>
+      DateTime(now.year, now.month, now.day + day);
 
   static String convertDateTimeToString(DateTime dateTime) {
     String year = dateTime.year.toString();
@@ -46,22 +47,23 @@ abstract class UtilsDate {
     return ddmm;
   }
 
-  static String getTitleForTimetableTile(DateTime dateTime){
-    final month= getMonthName(dateTime.month);
-    final weekday= getWeekDay(dateTime.weekday);
+  static String getTitleForTimetableTile(DateTime dateTime) {
+    final month = getMonthName(dateTime.month);
+    final weekday = getWeekDay(dateTime.weekday);
     return "${dateTime.day} $month, $weekday";
   }
-  //    
-  static String getWeekDay(int day){
-    return switch(day){
-    (1)=>"Понедельник",
-    (2)=>"Вторник",
-    (3)=> "Среда",
-    (4)=> "Четверг",
-    (5)=> "Пятница",
-    (6)=> "Суббота",
-    (7)=> "Воскресенье",
-    _=>"Неизвестный день недели"
+
+  //
+  static String getWeekDay(int day) {
+    return switch (day) {
+      (1) => "Понедельник",
+      (2) => "Вторник",
+      (3) => "Среда",
+      (4) => "Четверг",
+      (5) => "Пятница",
+      (6) => "Суббота",
+      (7) => "Воскресенье",
+      _ => "Неизвестный день недели"
     };
   }
 
@@ -119,6 +121,12 @@ abstract class UtilsDate {
     return "Мая";
   }
 
+  static String getLabelForTimetable(
+      DateTime fromData, DateTime toData, bool isRight) {
+    final newFromData = DateTime(fromData.year, fromData.month,
+        isRight ? fromData.day + 7 : fromData.day - 7);
+    final newToData = DateTime(
+        toData.year, toData.month, isRight ? toData.day + 7 : toData.day - 7);
+    return '${convertDateTimeToString(newFromData)} - ${convertDateTimeToString(newToData)}';
+  }
 }
-
-

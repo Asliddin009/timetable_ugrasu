@@ -22,16 +22,14 @@ UserEntity _$UserEntityFromJson(Map<String, dynamic> json) {
 mixin _$UserEntity {
   GroupEntity? get groupEntityl =>
       throw _privateConstructorUsedError; //флаг чтобы перебрасывать сразу на экран с расписанием
-  @JsonKey(defaultValue: true)
   bool? get rootInTimetable =>
       throw _privateConstructorUsedError; //флаг для темы
-  @JsonKey(defaultValue: true)
   bool? get theme =>
       throw _privateConstructorUsedError; //флаг для языка(по умолчанию русский)
-  @JsonKey(defaultValue: true)
   bool? get isRusLanguage => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   AsyncSnapshot<dynamic>? get userState => throw _privateConstructorUsedError;
+  List<int> get listLikes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,10 +45,11 @@ abstract class $UserEntityCopyWith<$Res> {
   @useResult
   $Res call(
       {GroupEntity? groupEntityl,
-      @JsonKey(defaultValue: true) bool? rootInTimetable,
-      @JsonKey(defaultValue: true) bool? theme,
-      @JsonKey(defaultValue: true) bool? isRusLanguage,
-      @JsonKey(ignore: true) AsyncSnapshot<dynamic>? userState});
+      bool? rootInTimetable,
+      bool? theme,
+      bool? isRusLanguage,
+      @JsonKey(ignore: true) AsyncSnapshot<dynamic>? userState,
+      List<int> listLikes});
 
   $GroupEntityCopyWith<$Res>? get groupEntityl;
 }
@@ -73,6 +72,7 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
     Object? theme = freezed,
     Object? isRusLanguage = freezed,
     Object? userState = freezed,
+    Object? listLikes = null,
   }) {
     return _then(_value.copyWith(
       groupEntityl: freezed == groupEntityl
@@ -95,6 +95,10 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
           ? _value.userState
           : userState // ignore: cast_nullable_to_non_nullable
               as AsyncSnapshot<dynamic>?,
+      listLikes: null == listLikes
+          ? _value.listLikes
+          : listLikes // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ) as $Val);
   }
 
@@ -121,10 +125,11 @@ abstract class _$$_UserEntityCopyWith<$Res>
   @useResult
   $Res call(
       {GroupEntity? groupEntityl,
-      @JsonKey(defaultValue: true) bool? rootInTimetable,
-      @JsonKey(defaultValue: true) bool? theme,
-      @JsonKey(defaultValue: true) bool? isRusLanguage,
-      @JsonKey(ignore: true) AsyncSnapshot<dynamic>? userState});
+      bool? rootInTimetable,
+      bool? theme,
+      bool? isRusLanguage,
+      @JsonKey(ignore: true) AsyncSnapshot<dynamic>? userState,
+      List<int> listLikes});
 
   @override
   $GroupEntityCopyWith<$Res>? get groupEntityl;
@@ -146,6 +151,7 @@ class __$$_UserEntityCopyWithImpl<$Res>
     Object? theme = freezed,
     Object? isRusLanguage = freezed,
     Object? userState = freezed,
+    Object? listLikes = null,
   }) {
     return _then(_$_UserEntity(
       groupEntityl: freezed == groupEntityl
@@ -168,6 +174,10 @@ class __$$_UserEntityCopyWithImpl<$Res>
           ? _value.userState
           : userState // ignore: cast_nullable_to_non_nullable
               as AsyncSnapshot<dynamic>?,
+      listLikes: null == listLikes
+          ? _value._listLikes
+          : listLikes // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -177,10 +187,12 @@ class __$$_UserEntityCopyWithImpl<$Res>
 class _$_UserEntity implements _UserEntity {
   const _$_UserEntity(
       {this.groupEntityl,
-      @JsonKey(defaultValue: true) this.rootInTimetable,
-      @JsonKey(defaultValue: true) this.theme,
-      @JsonKey(defaultValue: true) this.isRusLanguage,
-      @JsonKey(ignore: true) this.userState});
+      this.rootInTimetable = true,
+      this.theme = true,
+      this.isRusLanguage = true,
+      @JsonKey(ignore: true) this.userState,
+      final List<int> listLikes = const []})
+      : _listLikes = listLikes;
 
   factory _$_UserEntity.fromJson(Map<String, dynamic> json) =>
       _$$_UserEntityFromJson(json);
@@ -189,23 +201,31 @@ class _$_UserEntity implements _UserEntity {
   final GroupEntity? groupEntityl;
 //флаг чтобы перебрасывать сразу на экран с расписанием
   @override
-  @JsonKey(defaultValue: true)
+  @JsonKey()
   final bool? rootInTimetable;
 //флаг для темы
   @override
-  @JsonKey(defaultValue: true)
+  @JsonKey()
   final bool? theme;
 //флаг для языка(по умолчанию русский)
   @override
-  @JsonKey(defaultValue: true)
+  @JsonKey()
   final bool? isRusLanguage;
   @override
   @JsonKey(ignore: true)
   final AsyncSnapshot<dynamic>? userState;
+  final List<int> _listLikes;
+  @override
+  @JsonKey()
+  List<int> get listLikes {
+    if (_listLikes is EqualUnmodifiableListView) return _listLikes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listLikes);
+  }
 
   @override
   String toString() {
-    return 'UserEntity(groupEntityl: $groupEntityl, rootInTimetable: $rootInTimetable, theme: $theme, isRusLanguage: $isRusLanguage, userState: $userState)';
+    return 'UserEntity(groupEntityl: $groupEntityl, rootInTimetable: $rootInTimetable, theme: $theme, isRusLanguage: $isRusLanguage, userState: $userState, listLikes: $listLikes)';
   }
 
   @override
@@ -221,13 +241,21 @@ class _$_UserEntity implements _UserEntity {
             (identical(other.isRusLanguage, isRusLanguage) ||
                 other.isRusLanguage == isRusLanguage) &&
             (identical(other.userState, userState) ||
-                other.userState == userState));
+                other.userState == userState) &&
+            const DeepCollectionEquality()
+                .equals(other._listLikes, _listLikes));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, groupEntityl, rootInTimetable,
-      theme, isRusLanguage, userState);
+  int get hashCode => Object.hash(
+      runtimeType,
+      groupEntityl,
+      rootInTimetable,
+      theme,
+      isRusLanguage,
+      userState,
+      const DeepCollectionEquality().hash(_listLikes));
 
   @JsonKey(ignore: true)
   @override
@@ -245,12 +273,12 @@ class _$_UserEntity implements _UserEntity {
 
 abstract class _UserEntity implements UserEntity {
   const factory _UserEntity(
-          {final GroupEntity? groupEntityl,
-          @JsonKey(defaultValue: true) final bool? rootInTimetable,
-          @JsonKey(defaultValue: true) final bool? theme,
-          @JsonKey(defaultValue: true) final bool? isRusLanguage,
-          @JsonKey(ignore: true) final AsyncSnapshot<dynamic>? userState}) =
-      _$_UserEntity;
+      {final GroupEntity? groupEntityl,
+      final bool? rootInTimetable,
+      final bool? theme,
+      final bool? isRusLanguage,
+      @JsonKey(ignore: true) final AsyncSnapshot<dynamic>? userState,
+      final List<int> listLikes}) = _$_UserEntity;
 
   factory _UserEntity.fromJson(Map<String, dynamic> json) =
       _$_UserEntity.fromJson;
@@ -258,17 +286,16 @@ abstract class _UserEntity implements UserEntity {
   @override
   GroupEntity? get groupEntityl;
   @override //флаг чтобы перебрасывать сразу на экран с расписанием
-  @JsonKey(defaultValue: true)
   bool? get rootInTimetable;
   @override //флаг для темы
-  @JsonKey(defaultValue: true)
   bool? get theme;
   @override //флаг для языка(по умолчанию русский)
-  @JsonKey(defaultValue: true)
   bool? get isRusLanguage;
   @override
   @JsonKey(ignore: true)
   AsyncSnapshot<dynamic>? get userState;
+  @override
+  List<int> get listLikes;
   @override
   @JsonKey(ignore: true)
   _$$_UserEntityCopyWith<_$_UserEntity> get copyWith =>

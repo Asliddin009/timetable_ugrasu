@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../app/di/init_di.dart';
+import 'package:timetable_ugrasu/features/setting/domain/cubit/setting_cubit.dart';
 import '../../auth/domain/auth_state/auth_cubit.dart';
-import '../../setting/domain/cubit/setting_cubit.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -31,66 +29,27 @@ class _SettingScreenState extends State<SettingScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Выбор группы"),
-      ),
-      body: _buildDefaultScreen(),
-    );
-  }
-
-  Widget _buildDefaultScreen() {
-    return Column(
-      children: [
-        Expanded(
-          child: ListView(
-            shrinkWrap: true,
-            padding: EdgeInsets.all(16.0),
+        appBar: AppBar(
+          title: const Text("Выбор группы"),
+        ),
+        body: Container(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  label: Text('dsadsa')
-                ),
-              ),
-              SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  /*_bloc.add(DataFormUploadEvent(
-                    phoneEditController.text,
-                    emailEditController.text,
-                    addressEditController.text,
-                    commentEditController.text,
-                    state.login.defaultAccount.city,
-                    state.login.defaultAccount.number,
-                    state.authToken,
-                  ));*/
-                  //if(state.descResultError.contains("Вы уже оставляли заявку на поверку")){
-                  showDialog(context: context, builder: (BuildContext ctx){
-                    return AlertDialog(
-                      title: const Text('Хотите снова отправить заявку?'),
-                      content: Text("state.descResultError"),
-                      actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('Да')),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('Нет'))
-                      ],
-                    );
-                  });
-                  // }
-                }, child: Text('ОТПРАВИТЬ ЗАЯВКУ'),
-              ),
-              SizedBox(height: 16),
+                  onPressed: () {
+                    context.read<AuthCubit>().logout();
+                  },
+                  child: const Text("Выйти")),
+              ElevatedButton(
+                  onPressed: () {
+                    context.read<SettingCubit>().swapTheme();
+                  },
+                  child: const Text("Поменять тему ")),
             ],
           ),
-        ),
-      ],
-    );
+        ));
   }
 }
-

@@ -33,6 +33,7 @@ class LessonEntity with _$LessonEntity {
         required String dayOfWeekString,
         required String discipline,
         required String endLesson,
+            required String contentTableOfLessonsName,
         String? group,
         required String lecturer,
         String? lecturerEmail,

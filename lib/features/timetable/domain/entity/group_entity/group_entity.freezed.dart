@@ -23,6 +23,7 @@ mixin _$GroupEntity {
   String get name => throw _privateConstructorUsedError;
   String? get speciality => throw _privateConstructorUsedError;
   int get groupOid => throw _privateConstructorUsedError;
+  bool get isLikes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,7 @@ abstract class $GroupEntityCopyWith<$Res> {
           GroupEntity value, $Res Function(GroupEntity) then) =
       _$GroupEntityCopyWithImpl<$Res, GroupEntity>;
   @useResult
-  $Res call({String name, String? speciality, int groupOid});
+  $Res call({String name, String? speciality, int groupOid, bool isLikes});
 }
 
 /// @nodoc
@@ -55,6 +56,7 @@ class _$GroupEntityCopyWithImpl<$Res, $Val extends GroupEntity>
     Object? name = null,
     Object? speciality = freezed,
     Object? groupOid = null,
+    Object? isLikes = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -69,6 +71,10 @@ class _$GroupEntityCopyWithImpl<$Res, $Val extends GroupEntity>
           ? _value.groupOid
           : groupOid // ignore: cast_nullable_to_non_nullable
               as int,
+      isLikes: null == isLikes
+          ? _value.isLikes
+          : isLikes // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -81,7 +87,7 @@ abstract class _$$_GroupEntityCopyWith<$Res>
       __$$_GroupEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String? speciality, int groupOid});
+  $Res call({String name, String? speciality, int groupOid, bool isLikes});
 }
 
 /// @nodoc
@@ -98,6 +104,7 @@ class __$$_GroupEntityCopyWithImpl<$Res>
     Object? name = null,
     Object? speciality = freezed,
     Object? groupOid = null,
+    Object? isLikes = null,
   }) {
     return _then(_$_GroupEntity(
       name: null == name
@@ -112,6 +119,10 @@ class __$$_GroupEntityCopyWithImpl<$Res>
           ? _value.groupOid
           : groupOid // ignore: cast_nullable_to_non_nullable
               as int,
+      isLikes: null == isLikes
+          ? _value.isLikes
+          : isLikes // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -120,7 +131,10 @@ class __$$_GroupEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GroupEntity implements _GroupEntity {
   const _$_GroupEntity(
-      {required this.name, this.speciality, required this.groupOid});
+      {required this.name,
+      this.speciality,
+      required this.groupOid,
+      this.isLikes = false});
 
   factory _$_GroupEntity.fromJson(Map<String, dynamic> json) =>
       _$$_GroupEntityFromJson(json);
@@ -131,10 +145,13 @@ class _$_GroupEntity implements _GroupEntity {
   final String? speciality;
   @override
   final int groupOid;
+  @override
+  @JsonKey()
+  final bool isLikes;
 
   @override
   String toString() {
-    return 'GroupEntity(name: $name, speciality: $speciality, groupOid: $groupOid)';
+    return 'GroupEntity(name: $name, speciality: $speciality, groupOid: $groupOid, isLikes: $isLikes)';
   }
 
   @override
@@ -146,12 +163,14 @@ class _$_GroupEntity implements _GroupEntity {
             (identical(other.speciality, speciality) ||
                 other.speciality == speciality) &&
             (identical(other.groupOid, groupOid) ||
-                other.groupOid == groupOid));
+                other.groupOid == groupOid) &&
+            (identical(other.isLikes, isLikes) || other.isLikes == isLikes));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, speciality, groupOid);
+  int get hashCode =>
+      Object.hash(runtimeType, name, speciality, groupOid, isLikes);
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +190,8 @@ abstract class _GroupEntity implements GroupEntity {
   const factory _GroupEntity(
       {required final String name,
       final String? speciality,
-      required final int groupOid}) = _$_GroupEntity;
+      required final int groupOid,
+      final bool isLikes}) = _$_GroupEntity;
 
   factory _GroupEntity.fromJson(Map<String, dynamic> json) =
       _$_GroupEntity.fromJson;
@@ -182,6 +202,8 @@ abstract class _GroupEntity implements GroupEntity {
   String? get speciality;
   @override
   int get groupOid;
+  @override
+  bool get isLikes;
   @override
   @JsonKey(ignore: true)
   _$$_GroupEntityCopyWith<_$_GroupEntity> get copyWith =>

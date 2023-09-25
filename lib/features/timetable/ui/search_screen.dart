@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timetable_ugrasu/app/ui/app_loaded.dart';
+import 'package:timetable_ugrasu/app/utils/utils.dart';
+import 'package:timetable_ugrasu/features/auth/domain/auth_state/auth_cubit.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/bloc/search_bloc/search_cubit.dart';
-import 'package:timetable_ugrasu/features/timetable/domain/entity/auditorium_entity/auditorium_entity.dart';
-import 'package:timetable_ugrasu/features/timetable/domain/entity/lecturer_entity/lecturer_entity.dart';
 
-import '../domain/entity/group_entity/group_entity.dart';
-import 'components/search_list_tile/search_list_tile.dart';
+import 'components/search_list_tile.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -18,10 +17,13 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   TextEditingController controller = TextEditingController();
   List<dynamic> listEntity = [];
+  List<int> listLikes=[];
+
 
   @override
   void initState() {
     final searchCubit = context.read<SearchCubit>();
+    super.initState();
     if (context.read<SearchCubit>().state.listGroupEntity.isEmpty) {
       context.read<SearchCubit>().featchGroups(true).then((value) {
         listEntity.addAll(searchCubit.state.listGroupEntity);
@@ -46,7 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
     } else {
       listEntity.addAll(searchCubit.state.listLecturerEntity);
     }
-
+    listLikes = context.read<AuthCubit>().state.whenOrNull(authorized: (userEntity)=>userEntity)?.listLikes??[];
   }
 
   @override
@@ -54,6 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return BlocConsumer<SearchCubit, SearchState>(
         listener: (context, state) {},
         builder: (context, state) {
+          listEntity=Utils.sortList(listEntity: listEntity, listLikes: listLikes);
           if (state.asyncSnapshot!=const AsyncSnapshot.waiting()) {
             return Scaffold(
               body: Stack(
@@ -101,17 +104,11 @@ class _SearchScreenState extends State<SearchScreen> {
                                   )),
                             )),
                         actions: [
-                          IconButton(
-                              onPressed: () {
-                                context.read<SearchCubit>().logout();
-                                setState(() {});
-                              },
-                              icon: const Icon(Icons.logout)),
-                          IconButton(
+                        IconButton(
                               onPressed: () {
                                 context.read<SearchCubit>()
                                   ..logout()
-                                  ..featchGroups(false);
+                                  ..featchGroups(true)..featchAuditoriums(true)..featchLectures(true);
                                 setState(() {});
                               },
                               icon: const Icon(Icons.refresh))
@@ -120,7 +117,8 @@ class _SearchScreenState extends State<SearchScreen> {
                       SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (BuildContext context, int index) {
-                            return SearchListTile(item: listEntity[index], indexOdd: index.isOdd,);
+                            return SearchListTile(
+                              item: listEntity[index], indexOdd: index.isOdd,);
                           },
                           childCount: listEntity.length,
                         ),

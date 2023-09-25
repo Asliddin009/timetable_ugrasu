@@ -14,6 +14,10 @@ _$_UserEntity _$$_UserEntityFromJson(Map<String, dynamic> json) =>
       rootInTimetable: json['rootInTimetable'] as bool? ?? true,
       theme: json['theme'] as bool? ?? true,
       isRusLanguage: json['isRusLanguage'] as bool? ?? true,
+      listLikes: (json['listLikes'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>
@@ -22,4 +26,5 @@ Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>
       'rootInTimetable': instance.rootInTimetable,
       'theme': instance.theme,
       'isRusLanguage': instance.isRusLanguage,
+      'listLikes': instance.listLikes,
     };

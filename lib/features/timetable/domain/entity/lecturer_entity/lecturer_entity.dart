@@ -11,9 +11,10 @@ class LecturerEntity with _$LecturerEntity {
     required int lecturerOid,
     required String fio,
     String? email,
-    //String? lecturer_rank,
-    //String? chair,
-    //String? shortFIO,
+    String? lecturer_rank,
+    String? chair,
+    String? shortFIO,
+    @Default(false) bool isLikes,
   }) = _LecturerEntity;
 
 }

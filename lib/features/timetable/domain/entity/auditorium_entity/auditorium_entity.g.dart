@@ -13,6 +13,7 @@ _$_AuditoriumEntity _$$_AuditoriumEntityFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       number: json['number'] as String?,
       auditoriumOid: json['auditoriumOid'] as int,
+      isLikes: json['isLikes'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_AuditoriumEntityToJson(_$_AuditoriumEntity instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$_AuditoriumEntityToJson(_$_AuditoriumEntity instance) =>
       'name': instance.name,
       'number': instance.number,
       'auditoriumOid': instance.auditoriumOid,
+      'isLikes': instance.isLikes,
     };

@@ -1,11 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'auditorium_entity.freezed.dart';
+
 part 'auditorium_entity.g.dart';
 
 @freezed
 class AuditoriumEntity with _$AuditoriumEntity {
-  factory AuditoriumEntity.fromJson(Map<String, dynamic> json)=>
+  factory AuditoriumEntity.fromJson(Map<String, dynamic> json) =>
       _$AuditoriumEntityFromJson(json);
 
   const factory AuditoriumEntity({
@@ -13,9 +14,7 @@ class AuditoriumEntity with _$AuditoriumEntity {
     String? typeOfAuditorium,
     required String name,
     String? number,
-    required int auditoriumOid
+    required int auditoriumOid,
+    @Default(false) bool isLikes,
+  }) = _AuditoriumEntity;
 }
-      ) = _AuditoriumEntity;
-
-}
-

@@ -11,6 +11,8 @@ class GroupEntity with _$GroupEntity {
     required String name,
     String? speciality,
     required int groupOid,
+    @Default(false) bool isLikes,
+
   }) = _GroupEntity;
 
 }

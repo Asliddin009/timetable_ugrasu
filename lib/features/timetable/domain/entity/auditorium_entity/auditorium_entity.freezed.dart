@@ -25,6 +25,7 @@ mixin _$AuditoriumEntity {
   String get name => throw _privateConstructorUsedError;
   String? get number => throw _privateConstructorUsedError;
   int get auditoriumOid => throw _privateConstructorUsedError;
+  bool get isLikes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +44,8 @@ abstract class $AuditoriumEntityCopyWith<$Res> {
       String? typeOfAuditorium,
       String name,
       String? number,
-      int auditoriumOid});
+      int auditoriumOid,
+      bool isLikes});
 }
 
 /// @nodoc
@@ -64,6 +66,7 @@ class _$AuditoriumEntityCopyWithImpl<$Res, $Val extends AuditoriumEntity>
     Object? name = null,
     Object? number = freezed,
     Object? auditoriumOid = null,
+    Object? isLikes = null,
   }) {
     return _then(_value.copyWith(
       building: freezed == building
@@ -86,6 +89,10 @@ class _$AuditoriumEntityCopyWithImpl<$Res, $Val extends AuditoriumEntity>
           ? _value.auditoriumOid
           : auditoriumOid // ignore: cast_nullable_to_non_nullable
               as int,
+      isLikes: null == isLikes
+          ? _value.isLikes
+          : isLikes // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -103,7 +110,8 @@ abstract class _$$_AuditoriumEntityCopyWith<$Res>
       String? typeOfAuditorium,
       String name,
       String? number,
-      int auditoriumOid});
+      int auditoriumOid,
+      bool isLikes});
 }
 
 /// @nodoc
@@ -122,6 +130,7 @@ class __$$_AuditoriumEntityCopyWithImpl<$Res>
     Object? name = null,
     Object? number = freezed,
     Object? auditoriumOid = null,
+    Object? isLikes = null,
   }) {
     return _then(_$_AuditoriumEntity(
       building: freezed == building
@@ -144,6 +153,10 @@ class __$$_AuditoriumEntityCopyWithImpl<$Res>
           ? _value.auditoriumOid
           : auditoriumOid // ignore: cast_nullable_to_non_nullable
               as int,
+      isLikes: null == isLikes
+          ? _value.isLikes
+          : isLikes // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -156,7 +169,8 @@ class _$_AuditoriumEntity implements _AuditoriumEntity {
       this.typeOfAuditorium,
       required this.name,
       this.number,
-      required this.auditoriumOid});
+      required this.auditoriumOid,
+      this.isLikes = false});
 
   factory _$_AuditoriumEntity.fromJson(Map<String, dynamic> json) =>
       _$$_AuditoriumEntityFromJson(json);
@@ -171,10 +185,13 @@ class _$_AuditoriumEntity implements _AuditoriumEntity {
   final String? number;
   @override
   final int auditoriumOid;
+  @override
+  @JsonKey()
+  final bool isLikes;
 
   @override
   String toString() {
-    return 'AuditoriumEntity(building: $building, typeOfAuditorium: $typeOfAuditorium, name: $name, number: $number, auditoriumOid: $auditoriumOid)';
+    return 'AuditoriumEntity(building: $building, typeOfAuditorium: $typeOfAuditorium, name: $name, number: $number, auditoriumOid: $auditoriumOid, isLikes: $isLikes)';
   }
 
   @override
@@ -189,13 +206,14 @@ class _$_AuditoriumEntity implements _AuditoriumEntity {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.auditoriumOid, auditoriumOid) ||
-                other.auditoriumOid == auditoriumOid));
+                other.auditoriumOid == auditoriumOid) &&
+            (identical(other.isLikes, isLikes) || other.isLikes == isLikes));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, building, typeOfAuditorium, name, number, auditoriumOid);
+  int get hashCode => Object.hash(runtimeType, building, typeOfAuditorium, name,
+      number, auditoriumOid, isLikes);
 
   @JsonKey(ignore: true)
   @override
@@ -217,7 +235,8 @@ abstract class _AuditoriumEntity implements AuditoriumEntity {
       final String? typeOfAuditorium,
       required final String name,
       final String? number,
-      required final int auditoriumOid}) = _$_AuditoriumEntity;
+      required final int auditoriumOid,
+      final bool isLikes}) = _$_AuditoriumEntity;
 
   factory _AuditoriumEntity.fromJson(Map<String, dynamic> json) =
       _$_AuditoriumEntity.fromJson;
@@ -232,6 +251,8 @@ abstract class _AuditoriumEntity implements AuditoriumEntity {
   String? get number;
   @override
   int get auditoriumOid;
+  @override
+  bool get isLikes;
   @override
   @JsonKey(ignore: true)
   _$$_AuditoriumEntityCopyWith<_$_AuditoriumEntity> get copyWith =>

@@ -7,56 +7,63 @@ import 'package:timetable_ugrasu/features/timetable/domain/entity/lecturer_entit
 import 'package:timetable_ugrasu/features/timetable/domain/timetable_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-
 part 'search_state.dart';
 
 part 'search_cubit.freezed.dart';
-part 'search_cubit.g.dart';
 
+part 'search_cubit.g.dart';
 
 @Singleton()
 class SearchCubit extends HydratedCubit<SearchState> {
-  SearchCubit(this.timetableRepo) : super(const SearchState(listGroupEntity: [], listAuditoriumEntity: [], listLecturerEntity: []));
+  SearchCubit(this.timetableRepo)
+      : super(const SearchState(
+            listGroupEntity: [],
+            listAuditoriumEntity: [],
+            listLecturerEntity: []));
 
   final TimetableRepo timetableRepo;
 
-
-
-
-
-  Future<void> featchGroups(bool fromAssets)async {
+  Future<void> featchGroups(bool fromAssets) async {
     emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
-    await timetableRepo.getGroups(fromAssets).then((value){
-      Iterable iterable= value;
+    await timetableRepo.getGroups(fromAssets).then((value) {
+      Iterable iterable = value;
       emit(state.copyWith(
-        listGroupEntity: iterable.map((e) => GroupEntity.fromJson(e)).toList()
-      , asyncSnapshot: const AsyncSnapshot.withData(ConnectionState.done, true)
-      ));
-    });
-  }
-  Future<void> featchLectures(bool fromAssets)async {
-    emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
-    await timetableRepo.getLectures(fromAssets).then((value){
-      Iterable iterable= value;
-      emit(state.copyWith(
-          listLecturerEntity: iterable.map((e) => LecturerEntity.fromJson(e)).toList()
-          , asyncSnapshot: const AsyncSnapshot.withData(ConnectionState.done, true)
-      ));
-    });
-  }
-  Future<void> featchAuditoriums(bool fromAssets)async {
-    emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
-    await timetableRepo.getAuditoriums(fromAssets).then((value){
-      Iterable iterable= value;
-      emit(state.copyWith(
-          listAuditoriumEntity: iterable.map((e) => AuditoriumEntity.fromJson(e)).toList()
-          , asyncSnapshot: const AsyncSnapshot.withData(ConnectionState.done, true)
-      ));
+          listGroupEntity:
+              iterable.map((e) => GroupEntity.fromJson(e)).toList(),
+          asyncSnapshot:
+              const AsyncSnapshot.withData(ConnectionState.done, true)));
     });
   }
 
-  void logout(){
-    emit(state.copyWith(listGroupEntity: [],listAuditoriumEntity: [],listLecturerEntity: []));
+  Future<void> featchLectures(bool fromAssets) async {
+    emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
+    await timetableRepo.getLectures(fromAssets).then((value) {
+      Iterable iterable = value;
+      emit(state.copyWith(
+          listLecturerEntity:
+              iterable.map((e) => LecturerEntity.fromJson(e)).toList(),
+          asyncSnapshot:
+              const AsyncSnapshot.withData(ConnectionState.done, true)));
+    });
+  }
+
+  Future<void> featchAuditoriums(bool fromAssets) async {
+    emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
+    await timetableRepo.getAuditoriums(fromAssets).then((value) {
+      Iterable iterable = value;
+      emit(state.copyWith(
+          listAuditoriumEntity:
+              iterable.map((e) => AuditoriumEntity.fromJson(e)).toList(),
+          asyncSnapshot:
+              const AsyncSnapshot.withData(ConnectionState.done, true)));
+    });
+  }
+
+
+
+  void logout() {
+    emit(state.copyWith(
+        listGroupEntity: [], listAuditoriumEntity: [], listLecturerEntity: []));
   }
 
   @override

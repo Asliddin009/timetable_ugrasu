@@ -11,12 +11,13 @@ class UserEntity with _$UserEntity {
   const factory UserEntity({
     GroupEntity? groupEntityl,
     //флаг чтобы перебрасывать сразу на экран с расписанием
-    @JsonKey(defaultValue: true)bool? rootInTimetable,
+    @Default( true)bool? rootInTimetable,
     //флаг для темы
-    @JsonKey(defaultValue: true)bool? theme,
+    @Default( true)bool? theme,
     //флаг для языка(по умолчанию русский)
-    @JsonKey(defaultValue: true)bool? isRusLanguage,
+    @Default(true)bool? isRusLanguage,
     @JsonKey(ignore: true) AsyncSnapshot? userState,
+    @Default([]) List<int> listLikes
   }) = _UserEntity;
 
   factory UserEntity.fromJson(Map<String, dynamic> json) =>
