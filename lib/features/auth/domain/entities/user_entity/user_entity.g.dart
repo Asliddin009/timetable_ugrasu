@@ -8,9 +8,7 @@ part of 'user_entity.dart';
 
 _$_UserEntity _$$_UserEntityFromJson(Map<String, dynamic> json) =>
     _$_UserEntity(
-      groupEntityl: json['groupEntityl'] == null
-          ? null
-          : GroupEntity.fromJson(json['groupEntityl'] as Map<String, dynamic>),
+      idTimetableEntity: json['idTimetableEntity'] as int?,
       rootInTimetable: json['rootInTimetable'] as bool? ?? true,
       theme: json['theme'] as bool? ?? true,
       isRusLanguage: json['isRusLanguage'] as bool? ?? true,
@@ -22,7 +20,7 @@ _$_UserEntity _$$_UserEntityFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>
     <String, dynamic>{
-      'groupEntityl': instance.groupEntityl,
+      'idTimetableEntity': instance.idTimetableEntity,
       'rootInTimetable': instance.rootInTimetable,
       'theme': instance.theme,
       'isRusLanguage': instance.isRusLanguage,

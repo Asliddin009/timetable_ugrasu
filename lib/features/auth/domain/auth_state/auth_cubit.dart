@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -51,6 +53,19 @@ class AuthCubit extends HydratedCubit<AuthState> {
     ));
   }
 
+  void emitMainGroup(int id){
+    try{
+      emit(state.maybeWhen(orElse: ()=>state,authorized: (userEntity){
+        return AuthState.authorized(userEntity.copyWith(
+            idTimetableEntity:id
+        ));
+      }));
+    }catch(error){
+      log("Проблема в определении основной группы");
+      log(error.toString());
+    }
+
+  }
   List<int> updateListLikes(List<int> listLikes, dynamic item) {
     int id = Utils.getIdFromEntity(item);
     listLikes.contains(id) ? listLikes.remove(id) : listLikes.add(id);

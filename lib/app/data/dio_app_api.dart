@@ -15,7 +15,7 @@ class DioAppApi implements AppApi {
   DioAppApi(AppConfig appConfig) {
     final options = BaseOptions(
       baseUrl: appConfig.baseUrl,
-      connectTimeout: const Duration(seconds: 3),
+      connectTimeout: const Duration(seconds: 10),
     );
     dio = Dio(options);
     if (kDebugMode) dio.interceptors.add(PrettyDioLogger());

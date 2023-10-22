@@ -1,19 +1,25 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/group_entity/group_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/lecturer_entity/lecturer_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/auditorium_entity/auditorium_entity.dart';
+import 'package:timetable_ugrasu/features/timetable/ui/components/dialog_for_upgrade_main_id.dart';
 
+import '../../../../app/di/init_di.dart';
 import '../../../../app/utils/get_date_time.dart';
 import '../../../auth/domain/auth_state/auth_cubit.dart';
 import '../timetable_screen.dart';
 
 // ignore: must_be_immutable
 class SearchListTile extends StatefulWidget {
-  SearchListTile({super.key, required this.item, required this.indexOdd});
+  SearchListTile({super.key, required this.item, required this.indexOdd,});
   bool indexOdd;
   dynamic item;
+
+
 
   @override
   State<SearchListTile> createState() => _SearchListTileState();
@@ -25,7 +31,11 @@ class _SearchListTileState extends State<SearchListTile>
   int id = 0;
   String title = '';
   String subtitle = '';
+
   bool isLike=false;
+
+  int? mainId = locator.get<AuthCubit>().state.whenOrNull(authorized: (userEntity)=>userEntity.idTimetableEntity);
+
   @override
   void initState() {
     if (widget.item is AuditoriumEntity) {
@@ -63,19 +73,25 @@ class _SearchListTileState extends State<SearchListTile>
 
   @override
   Widget build(BuildContext context) {
-
+    log(mainId.toString());
     return ListTile(
       onTap: () {
-        String fromDate = UtilsDate.getFromdate();
-        String toDate = UtilsDate.getTodate();
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => TimetableScreen(
-                    toDate: toDate,
-                    fromDate: fromDate,
-                    searchEntity: widget.item)));
-      },
+        if(mainId==null){
+          dialogUpgradeMainId(context,id);
+        }else{
+          String fromDate = UtilsDate.getFromdate();
+          String toDate = UtilsDate.getTodate();
+
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => TimetableScreen(
+                      toDate: toDate,
+                      fromDate: fromDate,
+                      searchEntity: widget.item)));
+
+        }
+     },
       tileColor: widget.indexOdd
           ? Theme.of(context).primaryColor
           : Theme.of(context).scaffoldBackgroundColor,

@@ -127,6 +127,6 @@ abstract class UtilsDate {
         isRight ? fromData.day + 7 : fromData.day - 7);
     final newToData = DateTime(
         toData.year, toData.month, isRight ? toData.day + 7 : toData.day - 7);
-    return '${convertDateTimeToString(newFromData)} - ${convertDateTimeToString(newToData)}';
+    return '${newFromData.day} - ${newToData.day}\n${getMonthName(newToData.month).substring(0,3)}';
   }
 }

@@ -34,8 +34,8 @@ class TimetableContainer extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: () {
-                        showBottomSheetTimetable(context, listLessons[index]);
+                      onLongPress: () {
+                        showBottomSheet(context: context, builder: (context)=>TimetableBottomSheet(context: context, lessonEntity: listLessons[index]));
                       },
                       child: TimetableTile(
                         lessonEntity: listLessons[index],

@@ -31,7 +31,7 @@ class _SearchScreenState extends State<SearchScreen> {
       });
     } else {
       listEntity.addAll(searchCubit.state.listGroupEntity);
-    }
+    }/*
    if (context.read<SearchCubit>().state.listAuditoriumEntity.isEmpty) {
       context.read<SearchCubit>().featchAuditoriums(true).then((value) {
         listEntity.addAll(searchCubit.state.listAuditoriumEntity) ;
@@ -39,7 +39,7 @@ class _SearchScreenState extends State<SearchScreen> {
       });
     } else {
       listEntity.addAll(searchCubit.state.listAuditoriumEntity);
-    }
+    }*/
     if (context.read<SearchCubit>().state.listLecturerEntity.isEmpty) {
       context.read<SearchCubit>().featchLectures(true).then((value) {
         listEntity.addAll(searchCubit.state.listLecturerEntity);
@@ -78,22 +78,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               padding: const EdgeInsets.all(15),
                               child: TextFormField(
                                   onChanged: (value) {
-                                    listEntity=[];
-                                    listEntity.addAll(state.listGroupEntity
-                                        .where((element) =>
-                                            element.name.contains(value))
-                                        .toList());
-
-                                    listEntity.addAll(state.listLecturerEntity
-                                        .where((element) =>
-                                        element.fio.toUpperCase().contains(value.toUpperCase()))
-                                        .toList());
-
-                                    listEntity.addAll(state.listAuditoriumEntity
-                                        .where((element) =>
-                                        (element.number??" ").contains(value))
-                                        .toList());
-
+                                    //listEntity=Utils.searchList(state, value);
                                     setState(() {});
                                   },
                                   decoration: const InputDecoration(
