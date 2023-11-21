@@ -216,8 +216,9 @@ mixin _$LessonEntity {
   String get lecturer => throw _privateConstructorUsedError;
   String? get lecturerEmail => throw _privateConstructorUsedError;
   String get kindOfWork => throw _privateConstructorUsedError;
-  String? get lecturer_rank => throw _privateConstructorUsedError;
-  String? get lecturer_title => throw _privateConstructorUsedError; //Фильтр
+  String? get subGroup => throw _privateConstructorUsedError;
+  String? get lecturerRank => throw _privateConstructorUsedError;
+  String? get lecturerTitle => throw _privateConstructorUsedError; //Фильтр
   bool? get isFilter => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -246,8 +247,9 @@ abstract class $LessonEntityCopyWith<$Res> {
       String lecturer,
       String? lecturerEmail,
       String kindOfWork,
-      String? lecturer_rank,
-      String? lecturer_title,
+      String? subGroup,
+      String? lecturerRank,
+      String? lecturerTitle,
       bool? isFilter});
 }
 
@@ -277,8 +279,9 @@ class _$LessonEntityCopyWithImpl<$Res, $Val extends LessonEntity>
     Object? lecturer = null,
     Object? lecturerEmail = freezed,
     Object? kindOfWork = null,
-    Object? lecturer_rank = freezed,
-    Object? lecturer_title = freezed,
+    Object? subGroup = freezed,
+    Object? lecturerRank = freezed,
+    Object? lecturerTitle = freezed,
     Object? isFilter = freezed,
   }) {
     return _then(_value.copyWith(
@@ -334,13 +337,17 @@ class _$LessonEntityCopyWithImpl<$Res, $Val extends LessonEntity>
           ? _value.kindOfWork
           : kindOfWork // ignore: cast_nullable_to_non_nullable
               as String,
-      lecturer_rank: freezed == lecturer_rank
-          ? _value.lecturer_rank
-          : lecturer_rank // ignore: cast_nullable_to_non_nullable
+      subGroup: freezed == subGroup
+          ? _value.subGroup
+          : subGroup // ignore: cast_nullable_to_non_nullable
               as String?,
-      lecturer_title: freezed == lecturer_title
-          ? _value.lecturer_title
-          : lecturer_title // ignore: cast_nullable_to_non_nullable
+      lecturerRank: freezed == lecturerRank
+          ? _value.lecturerRank
+          : lecturerRank // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lecturerTitle: freezed == lecturerTitle
+          ? _value.lecturerTitle
+          : lecturerTitle // ignore: cast_nullable_to_non_nullable
               as String?,
       isFilter: freezed == isFilter
           ? _value.isFilter
@@ -372,8 +379,9 @@ abstract class _$$_LessonEntityCopyWith<$Res>
       String lecturer,
       String? lecturerEmail,
       String kindOfWork,
-      String? lecturer_rank,
-      String? lecturer_title,
+      String? subGroup,
+      String? lecturerRank,
+      String? lecturerTitle,
       bool? isFilter});
 }
 
@@ -401,8 +409,9 @@ class __$$_LessonEntityCopyWithImpl<$Res>
     Object? lecturer = null,
     Object? lecturerEmail = freezed,
     Object? kindOfWork = null,
-    Object? lecturer_rank = freezed,
-    Object? lecturer_title = freezed,
+    Object? subGroup = freezed,
+    Object? lecturerRank = freezed,
+    Object? lecturerTitle = freezed,
     Object? isFilter = freezed,
   }) {
     return _then(_$_LessonEntity(
@@ -458,13 +467,17 @@ class __$$_LessonEntityCopyWithImpl<$Res>
           ? _value.kindOfWork
           : kindOfWork // ignore: cast_nullable_to_non_nullable
               as String,
-      lecturer_rank: freezed == lecturer_rank
-          ? _value.lecturer_rank
-          : lecturer_rank // ignore: cast_nullable_to_non_nullable
+      subGroup: freezed == subGroup
+          ? _value.subGroup
+          : subGroup // ignore: cast_nullable_to_non_nullable
               as String?,
-      lecturer_title: freezed == lecturer_title
-          ? _value.lecturer_title
-          : lecturer_title // ignore: cast_nullable_to_non_nullable
+      lecturerRank: freezed == lecturerRank
+          ? _value.lecturerRank
+          : lecturerRank // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lecturerTitle: freezed == lecturerTitle
+          ? _value.lecturerTitle
+          : lecturerTitle // ignore: cast_nullable_to_non_nullable
               as String?,
       isFilter: freezed == isFilter
           ? _value.isFilter
@@ -491,8 +504,9 @@ class _$_LessonEntity implements _LessonEntity {
       required this.lecturer,
       this.lecturerEmail,
       required this.kindOfWork,
-      this.lecturer_rank,
-      this.lecturer_title,
+      this.subGroup,
+      this.lecturerRank,
+      this.lecturerTitle,
       this.isFilter});
 
   factory _$_LessonEntity.fromJson(Map<String, dynamic> json) =>
@@ -525,16 +539,18 @@ class _$_LessonEntity implements _LessonEntity {
   @override
   final String kindOfWork;
   @override
-  final String? lecturer_rank;
+  final String? subGroup;
   @override
-  final String? lecturer_title;
+  final String? lecturerRank;
+  @override
+  final String? lecturerTitle;
 //Фильтр
   @override
   final bool? isFilter;
 
   @override
   String toString() {
-    return 'LessonEntity(auditorium: $auditorium, beginLesson: $beginLesson, building: $building, date: $date, dayOfWeek: $dayOfWeek, dayOfWeekString: $dayOfWeekString, discipline: $discipline, endLesson: $endLesson, contentTableOfLessonsName: $contentTableOfLessonsName, group: $group, lecturer: $lecturer, lecturerEmail: $lecturerEmail, kindOfWork: $kindOfWork, lecturer_rank: $lecturer_rank, lecturer_title: $lecturer_title, isFilter: $isFilter)';
+    return 'LessonEntity(auditorium: $auditorium, beginLesson: $beginLesson, building: $building, date: $date, dayOfWeek: $dayOfWeek, dayOfWeekString: $dayOfWeekString, discipline: $discipline, endLesson: $endLesson, contentTableOfLessonsName: $contentTableOfLessonsName, group: $group, lecturer: $lecturer, lecturerEmail: $lecturerEmail, kindOfWork: $kindOfWork, subGroup: $subGroup, lecturerRank: $lecturerRank, lecturerTitle: $lecturerTitle, isFilter: $isFilter)';
   }
 
   @override
@@ -567,10 +583,12 @@ class _$_LessonEntity implements _LessonEntity {
                 other.lecturerEmail == lecturerEmail) &&
             (identical(other.kindOfWork, kindOfWork) ||
                 other.kindOfWork == kindOfWork) &&
-            (identical(other.lecturer_rank, lecturer_rank) ||
-                other.lecturer_rank == lecturer_rank) &&
-            (identical(other.lecturer_title, lecturer_title) ||
-                other.lecturer_title == lecturer_title) &&
+            (identical(other.subGroup, subGroup) ||
+                other.subGroup == subGroup) &&
+            (identical(other.lecturerRank, lecturerRank) ||
+                other.lecturerRank == lecturerRank) &&
+            (identical(other.lecturerTitle, lecturerTitle) ||
+                other.lecturerTitle == lecturerTitle) &&
             (identical(other.isFilter, isFilter) ||
                 other.isFilter == isFilter));
   }
@@ -592,8 +610,9 @@ class _$_LessonEntity implements _LessonEntity {
       lecturer,
       lecturerEmail,
       kindOfWork,
-      lecturer_rank,
-      lecturer_title,
+      subGroup,
+      lecturerRank,
+      lecturerTitle,
       isFilter);
 
   @JsonKey(ignore: true)
@@ -625,8 +644,9 @@ abstract class _LessonEntity implements LessonEntity {
       required final String lecturer,
       final String? lecturerEmail,
       required final String kindOfWork,
-      final String? lecturer_rank,
-      final String? lecturer_title,
+      final String? subGroup,
+      final String? lecturerRank,
+      final String? lecturerTitle,
       final bool? isFilter}) = _$_LessonEntity;
 
   factory _LessonEntity.fromJson(Map<String, dynamic> json) =
@@ -659,9 +679,11 @@ abstract class _LessonEntity implements LessonEntity {
   @override
   String get kindOfWork;
   @override
-  String? get lecturer_rank;
+  String? get subGroup;
   @override
-  String? get lecturer_title;
+  String? get lecturerRank;
+  @override
+  String? get lecturerTitle;
   @override //Фильтр
   bool? get isFilter;
   @override

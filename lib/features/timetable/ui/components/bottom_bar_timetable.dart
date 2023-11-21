@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_ugrasu/app/const/color_const.dart';
 import 'package:timetable_ugrasu/app/di/init_di.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/bloc/search_bloc/search_cubit.dart';
 

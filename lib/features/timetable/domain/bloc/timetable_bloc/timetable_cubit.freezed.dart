@@ -20,6 +20,8 @@ mixin _$TimetableState {
   AsyncSnapshot<dynamic>? get asyncSnapshot =>
       throw _privateConstructorUsedError;
   LessonsWeekEntity get lessonsWeek => throw _privateConstructorUsedError;
+  List<LessonEntity> get listDifferencesLesson =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TimetableStateCopyWith<TimetableState> get copyWith =>
@@ -34,7 +36,8 @@ abstract class $TimetableStateCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(ignore: true) AsyncSnapshot<dynamic>? asyncSnapshot,
-      LessonsWeekEntity lessonsWeek});
+      LessonsWeekEntity lessonsWeek,
+      List<LessonEntity> listDifferencesLesson});
 
   $LessonsWeekEntityCopyWith<$Res> get lessonsWeek;
 }
@@ -54,6 +57,7 @@ class _$TimetableStateCopyWithImpl<$Res, $Val extends TimetableState>
   $Res call({
     Object? asyncSnapshot = freezed,
     Object? lessonsWeek = null,
+    Object? listDifferencesLesson = null,
   }) {
     return _then(_value.copyWith(
       asyncSnapshot: freezed == asyncSnapshot
@@ -64,6 +68,10 @@ class _$TimetableStateCopyWithImpl<$Res, $Val extends TimetableState>
           ? _value.lessonsWeek
           : lessonsWeek // ignore: cast_nullable_to_non_nullable
               as LessonsWeekEntity,
+      listDifferencesLesson: null == listDifferencesLesson
+          ? _value.listDifferencesLesson
+          : listDifferencesLesson // ignore: cast_nullable_to_non_nullable
+              as List<LessonEntity>,
     ) as $Val);
   }
 
@@ -86,7 +94,8 @@ abstract class _$$_TimetableStateCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(ignore: true) AsyncSnapshot<dynamic>? asyncSnapshot,
-      LessonsWeekEntity lessonsWeek});
+      LessonsWeekEntity lessonsWeek,
+      List<LessonEntity> listDifferencesLesson});
 
   @override
   $LessonsWeekEntityCopyWith<$Res> get lessonsWeek;
@@ -105,6 +114,7 @@ class __$$_TimetableStateCopyWithImpl<$Res>
   $Res call({
     Object? asyncSnapshot = freezed,
     Object? lessonsWeek = null,
+    Object? listDifferencesLesson = null,
   }) {
     return _then(_$_TimetableState(
       asyncSnapshot: freezed == asyncSnapshot
@@ -115,6 +125,10 @@ class __$$_TimetableStateCopyWithImpl<$Res>
           ? _value.lessonsWeek
           : lessonsWeek // ignore: cast_nullable_to_non_nullable
               as LessonsWeekEntity,
+      listDifferencesLesson: null == listDifferencesLesson
+          ? _value._listDifferencesLesson
+          : listDifferencesLesson // ignore: cast_nullable_to_non_nullable
+              as List<LessonEntity>,
     ));
   }
 }
@@ -123,17 +137,29 @@ class __$$_TimetableStateCopyWithImpl<$Res>
 
 class _$_TimetableState implements _TimetableState {
   const _$_TimetableState(
-      {@JsonKey(ignore: true) this.asyncSnapshot, required this.lessonsWeek});
+      {@JsonKey(ignore: true) this.asyncSnapshot,
+      required this.lessonsWeek,
+      final List<LessonEntity> listDifferencesLesson = const []})
+      : _listDifferencesLesson = listDifferencesLesson;
 
   @override
   @JsonKey(ignore: true)
   final AsyncSnapshot<dynamic>? asyncSnapshot;
   @override
   final LessonsWeekEntity lessonsWeek;
+  final List<LessonEntity> _listDifferencesLesson;
+  @override
+  @JsonKey()
+  List<LessonEntity> get listDifferencesLesson {
+    if (_listDifferencesLesson is EqualUnmodifiableListView)
+      return _listDifferencesLesson;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listDifferencesLesson);
+  }
 
   @override
   String toString() {
-    return 'TimetableState(asyncSnapshot: $asyncSnapshot, lessonsWeek: $lessonsWeek)';
+    return 'TimetableState(asyncSnapshot: $asyncSnapshot, lessonsWeek: $lessonsWeek, listDifferencesLesson: $listDifferencesLesson)';
   }
 
   @override
@@ -144,11 +170,14 @@ class _$_TimetableState implements _TimetableState {
             (identical(other.asyncSnapshot, asyncSnapshot) ||
                 other.asyncSnapshot == asyncSnapshot) &&
             (identical(other.lessonsWeek, lessonsWeek) ||
-                other.lessonsWeek == lessonsWeek));
+                other.lessonsWeek == lessonsWeek) &&
+            const DeepCollectionEquality()
+                .equals(other._listDifferencesLesson, _listDifferencesLesson));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, asyncSnapshot, lessonsWeek);
+  int get hashCode => Object.hash(runtimeType, asyncSnapshot, lessonsWeek,
+      const DeepCollectionEquality().hash(_listDifferencesLesson));
 
   @JsonKey(ignore: true)
   @override
@@ -160,13 +189,16 @@ class _$_TimetableState implements _TimetableState {
 abstract class _TimetableState implements TimetableState {
   const factory _TimetableState(
       {@JsonKey(ignore: true) final AsyncSnapshot<dynamic>? asyncSnapshot,
-      required final LessonsWeekEntity lessonsWeek}) = _$_TimetableState;
+      required final LessonsWeekEntity lessonsWeek,
+      final List<LessonEntity> listDifferencesLesson}) = _$_TimetableState;
 
   @override
   @JsonKey(ignore: true)
   AsyncSnapshot<dynamic>? get asyncSnapshot;
   @override
   LessonsWeekEntity get lessonsWeek;
+  @override
+  List<LessonEntity> get listDifferencesLesson;
   @override
   @JsonKey(ignore: true)
   _$$_TimetableStateCopyWith<_$_TimetableState> get copyWith =>

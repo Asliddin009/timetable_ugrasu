@@ -73,6 +73,13 @@ class _TimetableScreenState extends State<TimetableScreen>
             return Scaffold(
               appBar: AppBar(
                 title: Text(titleText),
+                actions: [
+                  IconButton(onPressed: (){
+                    context
+                        .read<TimetableCubit>()
+                        .getTimetable(id, widget.fromDate, widget.toDate);
+                  }, icon: const Icon(Icons.texture_sharp))
+                ],
               ),
               body: ListView.separated(
                 itemBuilder: (BuildContext context, int index) =>
@@ -95,7 +102,7 @@ class _TimetableScreenState extends State<TimetableScreen>
                     children: [
                       TextButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const MainScreen()));
                           },
                           child: const Icon(
                             Icons.home,
@@ -108,7 +115,6 @@ class _TimetableScreenState extends State<TimetableScreen>
                             color: Colors.white,
                           )),
                       TextButton(onPressed: () {
-
                         widget.toDate=  UtilsDate.convertDateTimeToString(UtilsDate.addDay(UtilsDate.convertStringToDateTime(widget.toDate), -7));
                         widget.fromDate=  UtilsDate.convertDateTimeToString(UtilsDate.addDay(UtilsDate.convertStringToDateTime(widget.fromDate), -7));
                         leftWeekTitle = UtilsDate.getLabelForTimetable(UtilsDate.convertStringToDateTime(widget.fromDate), UtilsDate.convertStringToDateTime(widget.toDate), false);
@@ -121,7 +127,6 @@ class _TimetableScreenState extends State<TimetableScreen>
                         context
                             .read<TimetableCubit>()
                             .getTimetable(id, widget.fromDate, widget.toDate);
-
                       }, child: Text(leftWeekTitle,style: const TextStyle(color: Colors.white30),)),
                       TextButton(onPressed: () {}, child: Text(weekTitle,style: const TextStyle(color: Colors.white),)),
                       TextButton(onPressed: () {

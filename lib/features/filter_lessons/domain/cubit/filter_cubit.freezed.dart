@@ -23,10 +23,12 @@ mixin _$FilterState {
   @JsonKey(ignore: true)
   AsyncSnapshot<dynamic>? get asyncSnapshot =>
       throw _privateConstructorUsedError;
-  List<LessonsWeekEntity>? get lessonsOn10Weeks =>
+  List<LessonsWeekEntity>? get lessonsWeeks =>
       throw _privateConstructorUsedError;
   List<LessonEntity>? get fullListLessonsFilter =>
       throw _privateConstructorUsedError;
+  List<int> get listDisciplineOid => throw _privateConstructorUsedError;
+  String? get subGroup => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,8 +44,10 @@ abstract class $FilterStateCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(ignore: true) AsyncSnapshot<dynamic>? asyncSnapshot,
-      List<LessonsWeekEntity>? lessonsOn10Weeks,
-      List<LessonEntity>? fullListLessonsFilter});
+      List<LessonsWeekEntity>? lessonsWeeks,
+      List<LessonEntity>? fullListLessonsFilter,
+      List<int> listDisciplineOid,
+      String? subGroup});
 }
 
 /// @nodoc
@@ -60,22 +64,32 @@ class _$FilterStateCopyWithImpl<$Res, $Val extends FilterState>
   @override
   $Res call({
     Object? asyncSnapshot = freezed,
-    Object? lessonsOn10Weeks = freezed,
+    Object? lessonsWeeks = freezed,
     Object? fullListLessonsFilter = freezed,
+    Object? listDisciplineOid = null,
+    Object? subGroup = freezed,
   }) {
     return _then(_value.copyWith(
       asyncSnapshot: freezed == asyncSnapshot
           ? _value.asyncSnapshot
           : asyncSnapshot // ignore: cast_nullable_to_non_nullable
               as AsyncSnapshot<dynamic>?,
-      lessonsOn10Weeks: freezed == lessonsOn10Weeks
-          ? _value.lessonsOn10Weeks
-          : lessonsOn10Weeks // ignore: cast_nullable_to_non_nullable
+      lessonsWeeks: freezed == lessonsWeeks
+          ? _value.lessonsWeeks
+          : lessonsWeeks // ignore: cast_nullable_to_non_nullable
               as List<LessonsWeekEntity>?,
       fullListLessonsFilter: freezed == fullListLessonsFilter
           ? _value.fullListLessonsFilter
           : fullListLessonsFilter // ignore: cast_nullable_to_non_nullable
               as List<LessonEntity>?,
+      listDisciplineOid: null == listDisciplineOid
+          ? _value.listDisciplineOid
+          : listDisciplineOid // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      subGroup: freezed == subGroup
+          ? _value.subGroup
+          : subGroup // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -90,8 +104,10 @@ abstract class _$$_FilterStateCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(ignore: true) AsyncSnapshot<dynamic>? asyncSnapshot,
-      List<LessonsWeekEntity>? lessonsOn10Weeks,
-      List<LessonEntity>? fullListLessonsFilter});
+      List<LessonsWeekEntity>? lessonsWeeks,
+      List<LessonEntity>? fullListLessonsFilter,
+      List<int> listDisciplineOid,
+      String? subGroup});
 }
 
 /// @nodoc
@@ -106,22 +122,32 @@ class __$$_FilterStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? asyncSnapshot = freezed,
-    Object? lessonsOn10Weeks = freezed,
+    Object? lessonsWeeks = freezed,
     Object? fullListLessonsFilter = freezed,
+    Object? listDisciplineOid = null,
+    Object? subGroup = freezed,
   }) {
     return _then(_$_FilterState(
       asyncSnapshot: freezed == asyncSnapshot
           ? _value.asyncSnapshot
           : asyncSnapshot // ignore: cast_nullable_to_non_nullable
               as AsyncSnapshot<dynamic>?,
-      lessonsOn10Weeks: freezed == lessonsOn10Weeks
-          ? _value._lessonsOn10Weeks
-          : lessonsOn10Weeks // ignore: cast_nullable_to_non_nullable
+      lessonsWeeks: freezed == lessonsWeeks
+          ? _value._lessonsWeeks
+          : lessonsWeeks // ignore: cast_nullable_to_non_nullable
               as List<LessonsWeekEntity>?,
       fullListLessonsFilter: freezed == fullListLessonsFilter
           ? _value._fullListLessonsFilter
           : fullListLessonsFilter // ignore: cast_nullable_to_non_nullable
               as List<LessonEntity>?,
+      listDisciplineOid: null == listDisciplineOid
+          ? _value._listDisciplineOid
+          : listDisciplineOid // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      subGroup: freezed == subGroup
+          ? _value.subGroup
+          : subGroup // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -131,10 +157,13 @@ class __$$_FilterStateCopyWithImpl<$Res>
 class _$_FilterState implements _FilterState {
   const _$_FilterState(
       {@JsonKey(ignore: true) this.asyncSnapshot,
-      final List<LessonsWeekEntity>? lessonsOn10Weeks,
-      final List<LessonEntity>? fullListLessonsFilter})
-      : _lessonsOn10Weeks = lessonsOn10Weeks,
-        _fullListLessonsFilter = fullListLessonsFilter;
+      final List<LessonsWeekEntity>? lessonsWeeks,
+      final List<LessonEntity>? fullListLessonsFilter,
+      final List<int> listDisciplineOid = const [],
+      this.subGroup})
+      : _lessonsWeeks = lessonsWeeks,
+        _fullListLessonsFilter = fullListLessonsFilter,
+        _listDisciplineOid = listDisciplineOid;
 
   factory _$_FilterState.fromJson(Map<String, dynamic> json) =>
       _$$_FilterStateFromJson(json);
@@ -142,13 +171,12 @@ class _$_FilterState implements _FilterState {
   @override
   @JsonKey(ignore: true)
   final AsyncSnapshot<dynamic>? asyncSnapshot;
-  final List<LessonsWeekEntity>? _lessonsOn10Weeks;
+  final List<LessonsWeekEntity>? _lessonsWeeks;
   @override
-  List<LessonsWeekEntity>? get lessonsOn10Weeks {
-    final value = _lessonsOn10Weeks;
+  List<LessonsWeekEntity>? get lessonsWeeks {
+    final value = _lessonsWeeks;
     if (value == null) return null;
-    if (_lessonsOn10Weeks is EqualUnmodifiableListView)
-      return _lessonsOn10Weeks;
+    if (_lessonsWeeks is EqualUnmodifiableListView) return _lessonsWeeks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -164,9 +192,22 @@ class _$_FilterState implements _FilterState {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<int> _listDisciplineOid;
+  @override
+  @JsonKey()
+  List<int> get listDisciplineOid {
+    if (_listDisciplineOid is EqualUnmodifiableListView)
+      return _listDisciplineOid;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listDisciplineOid);
+  }
+
+  @override
+  final String? subGroup;
+
   @override
   String toString() {
-    return 'FilterState(asyncSnapshot: $asyncSnapshot, lessonsOn10Weeks: $lessonsOn10Weeks, fullListLessonsFilter: $fullListLessonsFilter)';
+    return 'FilterState(asyncSnapshot: $asyncSnapshot, lessonsWeeks: $lessonsWeeks, fullListLessonsFilter: $fullListLessonsFilter, listDisciplineOid: $listDisciplineOid, subGroup: $subGroup)';
   }
 
   @override
@@ -177,9 +218,13 @@ class _$_FilterState implements _FilterState {
             (identical(other.asyncSnapshot, asyncSnapshot) ||
                 other.asyncSnapshot == asyncSnapshot) &&
             const DeepCollectionEquality()
-                .equals(other._lessonsOn10Weeks, _lessonsOn10Weeks) &&
+                .equals(other._lessonsWeeks, _lessonsWeeks) &&
             const DeepCollectionEquality()
-                .equals(other._fullListLessonsFilter, _fullListLessonsFilter));
+                .equals(other._fullListLessonsFilter, _fullListLessonsFilter) &&
+            const DeepCollectionEquality()
+                .equals(other._listDisciplineOid, _listDisciplineOid) &&
+            (identical(other.subGroup, subGroup) ||
+                other.subGroup == subGroup));
   }
 
   @JsonKey(ignore: true)
@@ -187,8 +232,10 @@ class _$_FilterState implements _FilterState {
   int get hashCode => Object.hash(
       runtimeType,
       asyncSnapshot,
-      const DeepCollectionEquality().hash(_lessonsOn10Weeks),
-      const DeepCollectionEquality().hash(_fullListLessonsFilter));
+      const DeepCollectionEquality().hash(_lessonsWeeks),
+      const DeepCollectionEquality().hash(_fullListLessonsFilter),
+      const DeepCollectionEquality().hash(_listDisciplineOid),
+      subGroup);
 
   @JsonKey(ignore: true)
   @override
@@ -207,8 +254,10 @@ class _$_FilterState implements _FilterState {
 abstract class _FilterState implements FilterState {
   const factory _FilterState(
       {@JsonKey(ignore: true) final AsyncSnapshot<dynamic>? asyncSnapshot,
-      final List<LessonsWeekEntity>? lessonsOn10Weeks,
-      final List<LessonEntity>? fullListLessonsFilter}) = _$_FilterState;
+      final List<LessonsWeekEntity>? lessonsWeeks,
+      final List<LessonEntity>? fullListLessonsFilter,
+      final List<int> listDisciplineOid,
+      final String? subGroup}) = _$_FilterState;
 
   factory _FilterState.fromJson(Map<String, dynamic> json) =
       _$_FilterState.fromJson;
@@ -217,9 +266,13 @@ abstract class _FilterState implements FilterState {
   @JsonKey(ignore: true)
   AsyncSnapshot<dynamic>? get asyncSnapshot;
   @override
-  List<LessonsWeekEntity>? get lessonsOn10Weeks;
+  List<LessonsWeekEntity>? get lessonsWeeks;
   @override
   List<LessonEntity>? get fullListLessonsFilter;
+  @override
+  List<int> get listDisciplineOid;
+  @override
+  String? get subGroup;
   @override
   @JsonKey(ignore: true)
   _$$_FilterStateCopyWith<_$_FilterState> get copyWith =>
