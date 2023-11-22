@@ -35,9 +35,10 @@ class FilterCubit extends HydratedCubit<FilterState> {
       emit(state.copyWith(lessonsWeeks: [lessonsWeekEntity]));
     return;
     }
+    lessons=[...?state.lessonsWeeks,...[lessonsWeekEntity]];
     List<LessonsWeekEntity> sortList=[];
     for (var lesson in lessons) {
-      if(lesson.todate.day > DateTime.now().day&&lesson.todate.month>=DateTime.now().month){
+      if(lesson.todate.day > DateTime.now().day||lesson.todate.month>=DateTime.now().month){
         sortList.add(lesson);
       }
     }

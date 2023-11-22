@@ -6,6 +6,6 @@ class TimetableState with _$TimetableState {
     @JsonKey(ignore: true) AsyncSnapshot? asyncSnapshot,
     required LessonsWeekEntity lessonsWeek,
     @Default([])List<LessonEntity> listDifferencesLesson,
-
+    String? errorText
   })=_TimetableState;
 }
