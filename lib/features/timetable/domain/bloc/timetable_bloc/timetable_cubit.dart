@@ -2,10 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timetable_ugrasu/app/data/grpc/generated/auth.pb.dart';
-import 'package:timetable_ugrasu/app/data/grpc/grpc_app_api.dart';
 import 'package:timetable_ugrasu/app/utils/get_date_time.dart';
-import 'package:timetable_ugrasu/features/auth/domain/auth_state/auth_cubit.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/lessons_entity/lessons_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/timetable_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -38,25 +35,25 @@ class TimetableCubit extends Cubit<TimetableState> {
 
   void getTimetable(int groupOid, String fromdate, String todate) async {
     try {
+      bool flag = false;
+      LessonsWeekEntity? oldTimetable;
       if (UtilsTimetable.checkMainID(groupOid)) {
-        UserRepo userRepo = UserRepo();
-        final token = await userRepo.authRpcClient.signIn(UserDto(
-          email: 'test5@mail.ru',
-          password: 'test5',
-        ));
-        print("_____________________");
-        print(token.accessToken);
-        final oldTimetable =
+         oldTimetable =
             locator.get<FilterCubit>().getLessonsWeekEntity(fromdate, todate);
         if (oldTimetable != null) {
           emit(state.copyWith(
               lessonsWeek: oldTimetable,
               asyncSnapshot:
                   const AsyncSnapshot.withData(ConnectionState.done, true)));
-          return;
+          //return;
+          flag = true;
+        }else{
+          emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
+          //flag = true;
         }
+      } else {
+        emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
       }
-      emit(state.copyWith(asyncSnapshot: const AsyncSnapshot.waiting()));
       final value = await timetableRepo.getLessons(
           fromdate: fromdate, todate: todate, groupOid: groupOid);
       Iterable iterable = value;
@@ -66,7 +63,9 @@ class TimetableCubit extends Cubit<TimetableState> {
               .toList(),
           fromdate: UtilsDate.convertStringToDateTime(fromdate),
           todate: UtilsDate.convertStringToDateTime(todate));
-      if (UtilsTimetable.checkMainID(groupOid)) {
+      if (flag) {
+        getChangesTimetable(oldTimetable, lessonsWeekEntity);
+      } else {
         locator.get<FilterCubit>().addTimetable(lessonsWeekEntity);
       }
       emit(state.copyWith(
@@ -76,5 +75,16 @@ class TimetableCubit extends Cubit<TimetableState> {
     } catch (error) {
       stateError(error);
     }
+  }
+
+  List<String> getChangesTimetable(LessonsWeekEntity? oldTimetable,LessonsWeekEntity newTimetable){
+    if(oldTimetable==null) return [];
+    List<String> res = [];
+    for(int i =0;i<newTimetable.list.length;i++){
+      if(newTimetable.list[i].beginLesson!=oldTimetable.list[i].beginLesson){
+        res.add("Расписание изменилось");
+      }
+    }
+    return res;
   }
 }

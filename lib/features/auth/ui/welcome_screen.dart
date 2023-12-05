@@ -48,7 +48,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           controller: pageController,
           onPageChanged: (index) {
             setState(() {
-              flagFinishWelcomeScreen = (index == 2);
+                flagFinishWelcomeScreen = (index == 2);
             });
           },
           children: const [

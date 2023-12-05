@@ -4,16 +4,16 @@ import 'package:timetable_ugrasu/app/const/color_const.dart';
 
 ThemeData darkTheme = ThemeData.dark().copyWith(
   textTheme: TextTheme(
-    displayLarge: GoogleFonts.gentiumBookPlus().copyWith(
+    displayLarge: GoogleFonts.montserrat().copyWith(
       fontSize: 30,
       color: Colors.white,
     ),
-    displayMedium: GoogleFonts.gentiumBookPlus().copyWith(
+    displayMedium: GoogleFonts.montserrat().copyWith(
       fontSize: 20,
       letterSpacing: 5,
       color: Colors.white,
     ),
-    displaySmall: GoogleFonts.gentiumBookPlus().copyWith(
+    displaySmall: GoogleFonts.montserrat().copyWith(
       fontSize: 14,
       letterSpacing: 5,
       color: Colors.white,

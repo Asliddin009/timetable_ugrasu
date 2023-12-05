@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/lessons_entity/lessons_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/ui/components/bottom_sheet_timetable.dart';
 import 'package:timetable_ugrasu/features/timetable/ui/components/timetable_tile.dart';
+import 'package:timetable_ugrasu/features/timetable/ui/detail_timetable_screen.dart';
 
 import '../../../../app/utils/get_date_time.dart';
 
@@ -35,7 +36,18 @@ class TimetableContainer extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        showBottomSheet(context: context, builder: (context)=>TimetableBottomSheet(context: context, lessonEntity: listLessons[index]));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTimetableScreen()));
+                      },
+                      onLongPress: () {
+                        showBottomSheet(
+                            context: context,
+                            builder: (context) => TimetableBottomSheet(
+                                context: context,
+                                lessonEntity: listLessons[index]));
                       },
                       child: TimetableTile(
                         lessonEntity: listLessons[index],

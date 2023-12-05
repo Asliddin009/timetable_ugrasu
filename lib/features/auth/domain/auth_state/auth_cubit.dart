@@ -17,11 +17,11 @@ part 'auth_cubit.g.dart';
 class AuthCubit extends HydratedCubit<AuthState> {
   AuthCubit() : super(AuthState.notAuthorized());
 
-  void finishWelcomeScreen() {
-    emit(AuthState.waiting());
-    Future.delayed(const Duration(milliseconds: 400)).then((value) =>
-        emit(AuthState.authorized(const UserEntity(rootInTimetable: true))));
-  }
+    void finishWelcomeScreen() {
+      emit(AuthState.waiting());
+      Future.delayed(const Duration(milliseconds: 400)).then((value) =>
+          emit(AuthState.authorized(const UserEntity(rootInTimetable: true))));
+    }
 
   void logout() {
     emit(AuthState.waiting());

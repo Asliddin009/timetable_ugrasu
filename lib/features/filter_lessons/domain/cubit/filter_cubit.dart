@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../app/utils/get_date_time.dart';
 import '../../../timetable/domain/entity/lessons_entity/lessons_entity.dart';
+import '../utils.dart';
 
 part 'filter_state.dart';
 
@@ -31,14 +32,18 @@ class FilterCubit extends HydratedCubit<FilterState> {
 
   void addTimetable(LessonsWeekEntity lessonsWeekEntity) {
     var lessons = state.lessonsWeeks;
+    log(lessons?.length.toString() ?? "0", name: "Количество недель");
     if (lessons == null) {
       emit(state.copyWith(lessonsWeeks: [lessonsWeekEntity]));
-    return;
+      return;
     }
-    lessons=[...?state.lessonsWeeks,...[lessonsWeekEntity]];
-    List<LessonsWeekEntity> sortList=[];
+    lessons = [
+      ...?state.lessonsWeeks,
+      ...[lessonsWeekEntity]
+    ];
+    List<LessonsWeekEntity> sortList = [];
     for (var lesson in lessons) {
-      if(lesson.todate.day > DateTime.now().day||lesson.todate.month>=DateTime.now().month){
+      if (UtilsFilter.checkLesson(lesson, sortList)) {
         sortList.add(lesson);
       }
     }
@@ -47,13 +52,15 @@ class FilterCubit extends HydratedCubit<FilterState> {
 
   LessonsWeekEntity? getLessonsWeekEntity(String fromDate, String toDate) {
     try {
-      return state.lessonsWeeks!.map((lessonWeek) {
+      if(state.lessonsWeeks==null)return null;
+      for (var lessonWeek in state.lessonsWeeks!) {
         if (fromDate ==
-                UtilsDate.convertDateTimeToString(lessonWeek.fromdate) &&
+            UtilsDate.convertDateTimeToString(lessonWeek.fromdate) &&
             toDate == UtilsDate.convertDateTimeToString(lessonWeek.todate)) {
           return lessonWeek;
         }
-      }).toList()[0];
+      }
+      return null;
     } catch (error) {
       log(error.toString());
       return null;
