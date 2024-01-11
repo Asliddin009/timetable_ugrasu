@@ -37,7 +37,7 @@ class _TimetableScreenState extends State<TimetableScreen>
   //Title для Botttom Bar
   late String leftWeekTitle;
   late String weekTitle;
-  late String RightWeekTitle;
+  late String rightWeekTitle;
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _TimetableScreenState extends State<TimetableScreen>
         false);
     weekTitle =
         "${UtilsDate.convertStringToDateTime(widget.fromDate).day}-${UtilsDate.convertStringToDateTime(widget.toDate).day}\n${UtilsDate.getMonthName(UtilsDate.convertStringToDateTime(widget.toDate).month).substring(0, 3)}";
-    RightWeekTitle = UtilsDate.getLabelForTimetable(
+    rightWeekTitle = UtilsDate.getLabelForTimetable(
         UtilsDate.convertStringToDateTime(widget.fromDate),
         UtilsDate.convertStringToDateTime(widget.toDate),
         true);
@@ -155,7 +155,7 @@ class _TimetableScreenState extends State<TimetableScreen>
                                 false);
                             weekTitle =
                                 "${UtilsDate.convertStringToDateTime(widget.fromDate).day}-${UtilsDate.convertStringToDateTime(widget.toDate).day}\n${UtilsDate.getMonthName(UtilsDate.convertStringToDateTime(widget.toDate).month).substring(0, 3)}";
-                            RightWeekTitle = UtilsDate.getLabelForTimetable(
+                            rightWeekTitle = UtilsDate.getLabelForTimetable(
                                 UtilsDate.convertStringToDateTime(
                                     widget.fromDate),
                                 UtilsDate.convertStringToDateTime(
@@ -194,7 +194,7 @@ class _TimetableScreenState extends State<TimetableScreen>
                                 false);
                             weekTitle =
                                 "${UtilsDate.convertStringToDateTime(widget.fromDate).day}-${UtilsDate.convertStringToDateTime(widget.toDate).day}\n${UtilsDate.getMonthName(UtilsDate.convertStringToDateTime(widget.toDate).month).substring(0, 3)}";
-                            RightWeekTitle = UtilsDate.getLabelForTimetable(
+                            rightWeekTitle = UtilsDate.getLabelForTimetable(
                                 UtilsDate.convertStringToDateTime(
                                     widget.fromDate),
                                 UtilsDate.convertStringToDateTime(
@@ -204,7 +204,7 @@ class _TimetableScreenState extends State<TimetableScreen>
                                 id, widget.fromDate, widget.toDate);
                           },
                           child: Text(
-                            RightWeekTitle,
+                            rightWeekTitle,
                             style: const TextStyle(color: Colors.white30),
                           )),
                     ],

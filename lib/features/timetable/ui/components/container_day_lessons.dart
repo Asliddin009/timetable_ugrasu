@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timetable_ugrasu/features/timetable/domain/entity/lessons_entity/lessons_entity.dart';
 import 'package:timetable_ugrasu/features/timetable/ui/components/bottom_sheet_timetable.dart';
 import 'package:timetable_ugrasu/features/timetable/ui/components/timetable_tile.dart';
-import 'package:timetable_ugrasu/features/timetable/ui/detail_timetable_screen.dart';
+import 'package:timetable_ugrasu/features/detail_timetable_screen/ui/detail_timetable_screen.dart';
 
 import '../../../../app/utils/get_date_time.dart';
 
@@ -40,7 +40,7 @@ class TimetableContainer extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const DetailTimetableScreen()));
+                                    DetailTimetableScreen(lessonEntity: listLessons[index],)));
                       },
                       onLongPress: () {
                         showBottomSheet(

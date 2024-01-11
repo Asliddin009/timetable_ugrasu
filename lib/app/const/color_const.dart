@@ -9,7 +9,7 @@ class ConstColor{
   static final Color DARK_APP_TIMETABLE_COLOR= HexColor.fromHex('362F4A');
 
 
-  static final Color LIGHT_BACKGROUND_COLOR = Colors.white;
+  static const Color LIGHT_BACKGROUND_COLOR = Colors.white;
   static final Color LIGHT_APP_BAR_COLOR = HexColor.fromHex("006C3E");
 
 
